@@ -9,12 +9,12 @@
 <body>
     <div class="login">
         <h1>login</h1>
-        <form action="">
-            <p>usuário</p>
-            <input type="text" name="" placeholder="Insira seu login">
-            <p>senha</p>
-            <input type="password" name="" placeholder="Insira sua senha">
-            <input type="submit" name="" value="login">
+        <form method="POST" action="{{ url_for('login') }}">
+            <label for="text">Login:</label>
+            <input type="text" id="text" name="text" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
         </form>
     </div>
 </body>

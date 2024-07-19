@@ -16,7 +16,6 @@ def inserir_usuario(nome,senha,sobrenome):
     cursor.execute(query, (nome,sobrenome,senha_criptografada))
     conexao.commit()
     
-inserir_usuario(nome="joao",sobrenome="menino",senha="Me")
     
 def inserir_aluno(ra,nome,sobrenome,serie):
     query = "INSERT INTO aluno(RA,nome,sobrenome,serie) VALUES (%s, %s, %s, %s)"
