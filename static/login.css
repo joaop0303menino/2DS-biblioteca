@@ -9,11 +9,11 @@ body{
 
 .login{
     width: 320px;
-    height: 420px;
-    border: 2px solid #000;
+    height: 320px;
+    border: 2px solid #ffffff;
     border-radius: 80px, 0px, 80px, 0px;
     color: #fff;
-    background-color: rgba(0,0,5,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     top: 50%;
     left: 50%;
     position: absolute;
@@ -24,7 +24,7 @@ body{
 
 h1{
     margin: 0;
-    padding-top: 0;
+    padding-top: 20px;
     padding-left: 0;
     padding-bottom: 20px;
     letter-spacing: 10px;
@@ -33,15 +33,15 @@ h1{
     font-size: 25px;
 }
 
-.login p{
-    margin: 0;
+.login label{
+    margin: 4px;
     padding: 0;
     font-weight: bold;
 }
 
 .login input{
     width: 100%;
-    margin-bottom: 21px;
+    margin-bottom: 20px;
 }
 
 .login input[type="text"], input[type="password"]{

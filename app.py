@@ -1,46 +1,3 @@
-from flask import Flask, render_template, request
-import integracao_sql as i_sql
-from hashlib import sha256
-'''
-cursor, conexao = i_sql.juncao_sql()
-
-def autenticar(login, senha):
-    
-    cursor.execute("SELECT login, senha FROM administrador WHERE login = %s", (login,))
-    admin = cursor.fetchone()
-    
-    if admin:
-        senha_criptografada = sha256(senha.encode()).hexdigest()
-        if senha_criptografada == admin[1]:
-            return render_template("adm.html")
-
-    cursor.execute("SELECT nome, senha FROM usuario WHERE nome = %s", (login,))
-    user = cursor.fetchone()
-
-    if user:
-        senha_criptografada = sha256(senha.encode()).hexdigest()
-        if senha_criptografada == user[1]:
-            return render_template("user.html")
-
-    return render_template('main.html')
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template("main.html")
-
-@app.route('/pagina-main', methods=['POST','GET'])
-def login():
-    if request.method == 'POST':
-        login = request.form['text']
-        senha = request.form['password']
-        return autenticar(login, senha)
-    render_template("main.html")
-                
-if __name__ == '__main__':
-    app.run(debug=True)'''
-    
 from flask import Flask, render_template, request, redirect, url_for
 import integracao_sql as i_sql
 from hashlib import sha256
@@ -82,11 +39,23 @@ def login():
 
 @app.route('/admin-dashboard')
 def admin_dashboard():
-    return render_template("adm.html")
+    return render_template("administrador.html")
 
 @app.route('/user-dashboard')
 def user_dashboard():
+    return render_template("responsavel.html")
+
+@app.route("/user")
+def usuario():
     return render_template("user.html")
+
+@app.route("/livro-adm")
+def livro():
+    return render_template("livro.html")
+
+@app.route("/historico-adm")
+def historico():
+    return render_template("historico.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
