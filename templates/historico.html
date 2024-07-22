@@ -14,7 +14,11 @@
             </div>
 
             <ul>
-                <li><a href="admin-dashboard">Menu</a></li>
+                {%if session.dynamic == "adm" %}
+                    <li><a href="admin-dashboard">Menu</a></li>
+                {%elif session.dynamic == "user" %}
+                    <li><a href="user-dashboard">Menu</a></li>
+                {%endif %}
             </ul>
         </nav>
     </div>

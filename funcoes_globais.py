@@ -13,13 +13,7 @@ def read_table(tabela):
     columns = [desc[0] for desc in cursor.description]
 
     read_table = pd.DataFrame(results, columns=columns)
-    
-    headers = [ft.DataColumn(ft.Text(col)) for col in read_table.columns]
-    rows = [ft.DataRow(cells=[ft.DataCell(ft.Text(str(value))) for value in row]) for row in read_table.values]
-
-    data_table = ft.DataTable(columns=headers, rows=rows)
-
-    return data_table
+    return read_table
 
 def check_existing(tabela, coluna, valor):
     

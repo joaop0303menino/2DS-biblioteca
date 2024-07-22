@@ -14,6 +14,7 @@ body{
 }
 
 .text{
+    text-align: center;
     padding: 15%;
     margin: 0 auto;
     color: white;
