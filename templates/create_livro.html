@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>biblioteca CG</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='user.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='user.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -15,43 +15,37 @@
             </div>
 
             <ul>
-                <li><a href="admin-dashboard">Menu</a></li>
+                {%if session.dynamic == "adm" %}
+                    <li><a href="admin-dashboard">Menu</a></li>
+                {%elif session.dynamic == "user" %}
+                    <li><a href="user-dashboard">Menu</a></li>
+                {%endif %}
             </ul>
         </nav>
     </div>
     <div class="menu_lateral">
         <ul>
             <li class="lista">
-                <a href="adm">
+                <a href="read_table_livro">
                     <span id="icon" class="bi bi-table">  Tabela</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-adicionar">
+                <a href="create_livro">
                     <span id="icon" class="bi bi-person-plus-fill">  Adicionar</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-atualizar">
+                <a href="update_livro">
                     <span id="icon" class="bi bi-arrow-clockwise">  Atualizar</span>
                 </a>    
             </li>
             <li class="lista">
-                <a href="adm-deletar">
+                <a href="delete_livro">
                     <span id="icon" class="bi bi-trash">  Deletar</span>
                 </a>
             </li>
         </ul>
-    </div>
-    <div class="conteudo">
-        <h1>Tabela</h1>
-        <form method="POST">
-            <label for="text">Login:</label>
-            <input type="text" id="text" name="text" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
     </div>
 </body>
 </html>

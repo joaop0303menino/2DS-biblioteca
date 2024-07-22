@@ -54,22 +54,7 @@ def user_dashboard():
         return render_template("responsavel.html")
     return redirect(url_for('home'))
 
-@app.route("/user")
-def usuario():
-    return render_template("user.html")
-
-@app.route("/livro-adm")
-def livro():
-    return render_template("livro.html")
-
-@app.route("/historico-adm")
-def historico():
-    return render_template("historico.html")
-
-@app.route("/aluno")
-def aluno():
-    return render_template("aluno.html")
-
+#Funções adm
 @app.route("/adm")
 def adm():
     return render_template("adm.html")
@@ -89,6 +74,74 @@ def adm_atualizar():
 @app.route("/adm-deletar")
 def adm_deletar():
     return render_template("adm_deletar.html")
+
+#Funções do usuário
+@app.route("/create_usuario")
+def create_usuario():
+    return render_template("create_usuario.html")
+
+@app.route("/read_table_usuario")
+def read_table_usuario():   
+    return render_template("read_table_usuario.html")
+
+@app.route("/update_usuario")
+def update_usuario():   
+    return render_template("update_usuario.html")
+
+@app.route("/delete_usuario")
+def delete_usuario():   
+    return render_template("delete_usuario.html")
+
+#Funções do livro
+@app.route("/create_livro")
+def create_livro():
+    return render_template("create_livro.html")
+
+@app.route("/read_table_livro")
+def read_table_livro():   
+    return render_template("read_table_livro.html")
+
+@app.route("/update_livro")
+def update_livro():   
+    return render_template("update_livro.html")
+
+@app.route("/delete_livro")
+def delete_livro():   
+    return render_template("delete_livro.html")
+
+#Funções do histórico
+@app.route("/create_historico")
+def create_historico():   
+    return render_template("create_historico.html")
+
+@app.route("/read_table_historico")
+def read_table_historico():   
+    return render_template("read_table_historico.html")
+
+@app.route("/update_historico")
+def update_historico():   
+    return render_template("update_historico.html")
+
+@app.route("/delete_historico")
+def delete_historico():   
+    return render_template("delete_historico.html")
+
+#Funções do aluno
+@app.route("/create_aluno")
+def create_aluno():   
+    return render_template("create_aluno.html")
+
+@app.route("/read_table_aluno")
+def read_table_aluno():   
+    return render_template("read_table_aluno.html")
+
+@app.route("/update_aluno")
+def update_aluno():   
+    return render_template("update_aluno.html")
+
+@app.route("/delete_aluno")
+def delete_aluno():   
+    return render_template("delete_aluno.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
