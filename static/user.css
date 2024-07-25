@@ -5,11 +5,12 @@
 }
 
 body{
-    background-image: url(imagem/CG.jpg);
+    overflow: hidden;
+    background-image: url(imagem/biblioteca-CG.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .text{
@@ -19,8 +20,8 @@ body{
 }
 
 .container{
-    background-color: white;
-    max-width: 1400px;
+    background-color: #38bdf8;
+    width: 1280px;
     padding: 1%;
     margin: 0 auto;
 }
@@ -60,16 +61,15 @@ body{
 }
 
 .menu_lateral{
-    position: absolute;
-    height: 574px;
-    background-color: rgb(65, 162, 218);
+    position: fixed;
+    height: 600px;
     width: 200px;
-    box-shadow: 10px 0 0 rgb(255, 255, 255);
+    background-color: #38bdf8;
     color: rgb(255, 255, 255);
 }
 
 .menu_lateral ul{
-    background-color: rgb(65, 162, 218);
+    background-color: #38bdf8;
     position: absolute;
     top: 0;
     left: 0;
@@ -119,4 +119,86 @@ body{
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box{
+    position: fixed;
+    display: flex;
+    border:  solid #1d1d1d;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    width: 650px;
+    height: 350px;
+}
+
+
+.conteudo{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: rgb(81, 255, 0);
+}
+
+
+p{
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+}
+
+.box label{
+    margin: 4px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.box input{
+    border: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.box input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 35px;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.box input[type="submit"] hover{
+    cursor: pointer;
+    background-color: #ff4d4d;
+    transition: 0.2s;
 }

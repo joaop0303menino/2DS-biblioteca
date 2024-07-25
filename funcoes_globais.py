@@ -44,12 +44,9 @@ def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondent
 
 
 def delete(tabela,coluna,valor):
-    
-    cursor.execute(f'DELETE FROM {tabela} WHERE {coluna} = "{valor}"')
+    query = f'DELETE FROM {tabela} WHERE {coluna} = %s'
+    cursor.execute(query, (valor,))
     conexao.commit()
 
-    txt_confirmation_remove = f'{valor} removido com sucesso'
-    print(txt_confirmation_remove)
-    return txt_confirmation_remove
 
     

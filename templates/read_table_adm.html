@@ -22,22 +22,22 @@
     <div class="menu_lateral">
         <ul>
             <li class="lista">
-                <a href="adm">
+                <a href="read_table_adm">
                     <span id="icon" class="bi bi-table">  Tabela</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-adicionar">
+                <a href="create_adm">
                     <span id="icon" class="bi bi-person-plus-fill">  Adicionar</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-atualizar">
+                <a href="update_adm">
                     <span id="icon" class="bi bi-arrow-clockwise">  Atualizar</span>
                 </a>    
             </li>
             <li class="lista">
-                <a href="adm-deletar">
+                <a href="delete_adm">
                     <span id="icon" class="bi bi-trash">  Deletar</span>
                 </a>
             </li>
@@ -45,7 +45,7 @@
     </div>
     <div class="conteudo">
         <h1>Tabela</h1>
-        <form method="POST">
+        <form method="POST" action="/adm-adicionar">
             <label for="text">Login:</label>
             <input type="text" id="text" name="text" required>
             <label for="password">Senha:</label>

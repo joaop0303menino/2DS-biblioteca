@@ -22,36 +22,38 @@
     <div class="menu_lateral">
         <ul>
             <li class="lista">
-                <a href="adm">
+                <a href="read_table_adm">
                     <span id="icon" class="bi bi-table">  Tabela</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-adicionar">
+                <a href="create_adm">
                     <span id="icon" class="bi bi-person-plus-fill">  Adicionar</span>
                 </a>
             </li>
             <li class="lista">
-                <a href="adm-atualizar">
+                <a href="update_adm">
                     <span id="icon" class="bi bi-arrow-clockwise">  Atualizar</span>
                 </a>    
             </li>
             <li class="lista">
-                <a href="adm-deletar">
+                <a href="delete_adm">
                     <span id="icon" class="bi bi-trash">  Deletar</span>
                 </a>
             </li>
         </ul>
     </div>
-    <div class="conteudo">
-        <h1>Tabela</h1>
-        <form method="POST">
-            <label for="text">Login:</label>
-            <input type="text" id="text" name="text" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
+    <div class="centralizar">
+        <div class="box">
+            <p>Tabela</p>
+            <form method="POST" action="/create_adm">
+                <label for="id">Login:</label>
+                <input type="id" id="id" name="id" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
