@@ -20,6 +20,17 @@ app.config['MYSQL_DB'] = "u895973460_Biblioteca"
 
 mysql = MySQL(app)
 
+def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondente_a_identificacao, identificacao): 
+    
+    cur = mysql.connection.cursor()
+    if opcao_correspondente_a_mudanca == "senha":
+        mudanca = sha256(mudanca.encode()).hexdigest()
+                    
+    query = f"UPDATE {tabela} SET {opcao_correspondente_a_mudanca} = %s WHERE {pk_tabela_correspondente_a_identificacao} = %s"
+    cur.execute(query, (mudanca, identificacao))
+    mysql.connection.commit()
+    cur.close()
+
 def delete(tabela,coluna,valor):
     query = f"DELETE FROM {tabela} WHERE {coluna} = %s;"
     cur = mysql.connection.cursor()
@@ -128,7 +139,11 @@ def create_adm():
 
 @app.route("/update_adm", methods=['POST', 'GET'])
 def update_adm():
-    
+    if request.method == 'POST':
+        opcao = request.form.get('opcao')
+        alteracao = request.form.get('alteracao')
+        id = request.form.get('id')
+        update("administrador",opcao,alteracao,'id',id)
     return render_template("update_adm.html")
 
 @app.route("/delete_adm", methods=['POST', 'GET'])

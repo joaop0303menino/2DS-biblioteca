@@ -43,15 +43,19 @@
             </li>
         </ul>
     </div>
-    <div class="conteudo">
-        <p>Para atualizar o ADM digite as seguintes informações:</p>
-        <form method="POST" action="/adm-adicionar">
-            <label for="text">Login:</label>
-            <input type="text" id="text" name="text" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
+    <div class="centralizar">
+        <div class="box">
+            <p>Para atualizar o ADM digite as seguintes informações:</p>
+            <form method="POST" action="/update_adm">
+                <label for="opcao">O que deseja alterar:</label>
+                <input type="text" id="opcao" name="opcao" required>
+                <label for="alteracao">Alteração</label>
+                <input type="text" id="alteracao" name="alteracao" required>
+                <label for="id">Qual o ID do ADM que deseja atualizar</label>
+                <input type="text" id="id" name="id" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
