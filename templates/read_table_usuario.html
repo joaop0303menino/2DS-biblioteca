@@ -43,15 +43,11 @@
             </li>
         </ul>
     </div>
-    <div class="conteudo">
-        <h1>Tabela</h1>
-        <form method="POST">
-            <label for="text">Login:</label>
-            <input type="text" id="text" name="text" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
+    <div class="centralizar">
+        <div class="box">
+            <p>Tabela</p>
+            {{ table|safe }}
+        </div>
     </div>
 </body>
 </html>

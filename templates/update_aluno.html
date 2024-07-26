@@ -47,5 +47,19 @@
             </li>
         </ul>
     </div>
+    <div class="centralizar">
+        <div class="box">
+            <p>Para atualizar digite as seguintes informações:</p>
+            <form method="POST" action="/update_aluno">
+                <label for="opcao">O que deseja alterar:</label>
+                <input type="text" id="opcao" name="opcao" required>
+                <label for="alteracao">Alteração</label>
+                <input type="text" id="alteracao" name="alteracao" required>
+                <label for="ra">Qual o ra do aluno que deseja atualizar</label>
+                <input type="text" id="ra" name="ra" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

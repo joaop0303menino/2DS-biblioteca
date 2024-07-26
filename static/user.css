@@ -13,15 +13,9 @@ body{
     height: 100vh;
 }
 
-.text{
-    padding: 15%;
-    margin: 0 auto;
-    color: white;
-}
-
 .container{
-    background-color: #ffffff;
-    width: 1280px;
+    background-color: white;
+    max-width: 1400px;
     padding: 1%;
     margin: 0 auto;
 }
@@ -35,7 +29,7 @@ body{
 .container nav .logo{
     font-size: 35px;
     font-style: italic;
-    color: #000;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -45,6 +39,7 @@ body{
 
 .container nav ul li{
     display: inline-block;
+    margin: 5px;
 }
 
 .container nav ul li a{
@@ -137,24 +132,10 @@ body{
     flex-direction: column;
     text-align: center;
     padding-top: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     width: 650px;
     height: 350px;
 }
-
-
-.conteudo{
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    width: 300px;
-    height: 300px;
-    text-align: center;
-    padding: 40px;
-    margin: 0 auto;
-    background-color: rgb(81, 255, 0);
-}
-
 
 p{
     margin: 0;
@@ -183,7 +164,7 @@ p{
     background: transparent;
     outline: none;
     height: 40px;
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -192,7 +173,7 @@ p{
     outline: none;
     height: 35px;
     color: #000000;
-    background-color: #fff;
+    background-color: #000000;
     border-radius: 20px;
     transition: 0.2s;
 }
@@ -202,3 +183,20 @@ p{
     background-color: #ff4d4d;
     transition: 0.2s;
 }
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #ffffff;
+}
+
+th {
+    background-color: #ffffff;
+}
+    

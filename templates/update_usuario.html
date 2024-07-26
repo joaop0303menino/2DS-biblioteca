@@ -42,18 +42,20 @@
                 </a>
             </li>
         </ul>
-    </div>
-    <div class="conteudo">
-        <li>
-            <h1>Para atualizar o usuário digite as seguintes informações:</h1>
-            <form method="POST">
-                <label for="text">Usuário</label>
-                <input type="text" id="text" name="text" required>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+    </div>    
+    <div class="centralizar">
+        <div class="box">
+            <p>Para atualizar digite as seguintes informações:</p>
+            <form method="POST" action="/update_usuario">
+                <label for="opcao">O que deseja alterar:</label>
+                <input type="text" id="opcao" name="opcao" required>
+                <label for="alteracao">Alteração</label>
+                <input type="text" id="alteracao" name="alteracao" required>
+                <label for="id">Qual o ID do usuario que deseja atualizar</label>
+                <input type="text" id="id" name="id" required>
                 <button type="submit">Enviar</button>
             </form>
-        </li>
+        </div>
     </div>
 </body>
 </html>

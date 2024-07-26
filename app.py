@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for,session
 import integracao_sql as i_sql
+import pandas as pd
 import inserir as ins
 import funcoes_globais as devs
 from datetime import datetime, timedelta
@@ -19,6 +20,18 @@ app.config['MYSQL_PASSWORD'] = "123456789Carlos_gomes"
 app.config['MYSQL_DB'] = "u895973460_Biblioteca"
 
 mysql = MySQL(app)
+
+def read_table(tabela):
+    
+    cursor = mysql.connection.cursor()
+    query = f'SELECT * FROM {tabela}'
+    cursor.execute(query)
+    results = cursor.fetchall()
+    columns = [desc[0] for desc in cursor.description]
+
+    read_table = pd.DataFrame(results, columns=columns)
+    table_html = read_table.to_html(classes='dataframe table table-striped', index=False)
+    return table_html
 
 def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondente_a_identificacao, identificacao): 
     
@@ -80,8 +93,9 @@ def inserir_historico(ra, codigo_livro, obs, estado):
     
 
 def autenticar(login, senha):
+    cursor = mysql.connection.cursor()
     senha_criptografada = sha256(senha.encode()).hexdigest()
-
+    
     cursor.execute("SELECT senha FROM administrador WHERE login = %s", (login,))
     admin_senha = cursor.fetchone()
 
@@ -127,7 +141,9 @@ def user_dashboard():
 #Funções adm
 @app.route("/read_table_adm")
 def read_table_adm():
-    return render_template("read_table_adm.html")
+    tabela = 'administrador'
+    table = read_table(tabela)
+    return render_template("read_table_adm.html",table=table)
 
 @app.route("/create_adm", methods=['POST', 'GET'])
 def create_adm():
@@ -164,11 +180,18 @@ def create_usuario():
     return render_template("create_usuario.html")
 
 @app.route("/read_table_usuario")
-def read_table_usuario():   
-    return render_template("read_table_usuario.html")
+def read_table_usuario():  
+    tabela = 'usuario'
+    table = read_table(tabela) 
+    return render_template("read_table_usuario.html", table=table)
 
 @app.route("/update_usuario", methods=['POST', 'GET'])
 def update_usuario():   
+    if request.method == 'POST':
+        opcao = request.form.get('opcao')
+        alteracao = request.form.get('alteracao')
+        id = request.form.get('id')
+        update("usuario",opcao,alteracao,'id',id)
     return render_template("update_usuario.html")
 
 @app.route("/delete_usuario", methods=['POST', 'GET'])
@@ -191,11 +214,18 @@ def create_livro():
     return render_template("create_livro.html")
 
 @app.route("/read_table_livro")
-def read_table_livro():   
-    return render_template("read_table_livro.html")
+def read_table_livro():  
+    tabela = 'livro'
+    table = read_table(tabela) 
+    return render_template("read_table_livro.html", table=table)
 
 @app.route("/update_livro", methods=['POST', 'GET'])
-def update_livro():   
+def update_livro():  
+    if request.method == 'POST':
+        opcao = request.form.get('opcao')
+        alteracao = request.form.get('alteracao')
+        codigo = request.form.get('codigo')
+        update("livro",opcao,alteracao,'codigo',codigo) 
     return render_template("update_livro.html")
 
 @app.route("/delete_livro", methods=['POST', 'GET'])
@@ -219,11 +249,18 @@ def create_historico():
     return render_template("create_historico.html")
 
 @app.route("/read_table_historico")
-def read_table_historico():   
-    return render_template("read_table_historico.html")
+def read_table_historico():  
+    tabela = 'historico'
+    table = read_table(tabela)
+    return render_template("read_table_historico.html", table=table)
 
 @app.route("/update_historico", methods=['POST', 'GET'])
 def update_historico():   
+    if request.method == 'POST':
+        opcao = request.form.get('opcao')
+        alteracao = request.form.get('alteracao')
+        id = request.form.get('id')
+        update("historico",opcao,alteracao,'id',id) 
     return render_template("update_historico.html")
 
 @app.route("/delete_historico", methods=['POST', 'GET'])
@@ -248,10 +285,17 @@ def create_aluno():
 
 @app.route("/read_table_aluno")
 def read_table_aluno():   
-    return render_template("read_table_aluno.html")
+    tabela = 'aluno'
+    table = read_table(tabela)
+    return render_template("read_table_aluno.html", table=table)
 
 @app.route("/update_aluno", methods=['POST', 'GET'])
 def update_aluno():   
+    if request.method == 'POST':
+        opcao = request.form.get('opcao')
+        alteracao = request.form.get('alteracao')
+        ra = request.form.get('ra')
+        update("aluno",opcao,alteracao,'RA',ra) 
     return render_template("update_aluno.html")
 
 @app.route("/delete_aluno", methods=['POST', 'GET'])
