@@ -1,4 +1,210 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-image: url(imagem/biblioteca-CG.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    max-width: 1400px;
+    padding: 1%;
+    margin: 0 auto;
+}
+
+.container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container nav .logo {
+    font-size: 35px;
+    font-style: italic;
+    color: #000000;
+    font-weight: bold;
+}
+
+.container nav ul {
+    list-style: none;
+}
+
+.container nav ul li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.container nav ul li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #3b3b3b;
+    border-radius: 30px;
+    transition: 0.6s;
+}
+
+.container nav ul li a:hover {
+    background-color: rgb(130, 209, 255);
+}
+
+.menu_lateral {
+    position: fixed;
+    height: 600px;
+    width: 200px;
+    background-color: #38bdf8;
+    color: rgb(255, 255, 255);
+}
+
+.menu_lateral ul {
+    background-color: #38bdf8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.menu_lateral ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+
+.menu_lateral ul li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu_lateral ul li a #icon {
+    position: relative;
+    display: block;
+    font-size: 2rem;
+    min-width: 60px;
+    height: 100px;
+    text-align: left;
+    line-height: 70px;
+    color: #ffffff;
+}
+
+.menu_lateral ul li a #icon .bi {
+    position: relative;
+    display: block;
+    font-size: 1.5rem;
+    z-index: 1;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box {
+    position: fixed;
+    display: flex;
+    border: solid #1d1d1d;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+    width: 850px;
+    height: 350px;
+}
+
+.table-container {
+    overflow-y: auto;  /* Adiciona a rolagem vertical */
+    height: 250px;     /* Define a altura da div com rolagem */
+}
+
+table {
+    border-collapse: collapse;
+    color: #ffffff;
+    width: 100%;  /* Garante que a tabela use toda a largura da div */
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 2px solid #ffffff;
+    background-color: #38bdf8;
+}
+
+th {
+    background-color: #0484bb;
+}
+
+p {
+    margin: 0;
+    padding-top: 40px;
+    padding-left: 0;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.box label {
+    margin: 4px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.box input {
+    border: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 35px;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.box input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #ff4d4d;
+    transition: 0.2s;
+}
+
+
+
+
+
+/**{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -133,19 +339,20 @@ body{
     text-align: center;
     padding-top: 10px;
     color: rgb(0, 0, 0);
-    width: 650px;
+    width: 850px;
     height: 350px;
 }
 
 p{
     margin: 0;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 0;
     padding-bottom: 20px;
     letter-spacing: 10px;
     text-transform: uppercase;
     text-align: center;
     font-size: 25px;
+    color: #ffffff;
 }
 
 .box label{
@@ -172,10 +379,11 @@ p{
     border: none;
     outline: none;
     height: 35px;
-    color: #000000;
+    color: #ffffff;
     background-color: #000000;
     border-radius: 20px;
     transition: 0.2s;
+    
 }
 
 .box input[type="submit"] hover{
@@ -186,17 +394,19 @@ p{
 
 
 table {
-    width: 100%;
     border-collapse: collapse;
+    color: #ffffff;
 }
 
 th, td {
     padding: 8px 12px;
     text-align: left;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
+    background-color: #38bdf8;
 }
 
 th {
-    background-color: #ffffff;
+    background-color:#0484bb;
 }
-    
+*/
+

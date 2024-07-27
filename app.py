@@ -21,10 +21,10 @@ app.config['MYSQL_DB'] = "u895973460_Biblioteca"
 
 mysql = MySQL(app)
 
-def read_table(tabela):
+def read_table(tabela, oq_pegar):
     
     cursor = mysql.connection.cursor()
-    query = f'SELECT * FROM {tabela}'
+    query = f'SELECT {oq_pegar} FROM {tabela}'
     cursor.execute(query)
     results = cursor.fetchall()
     columns = [desc[0] for desc in cursor.description]
@@ -142,7 +142,7 @@ def user_dashboard():
 @app.route("/read_table_adm")
 def read_table_adm():
     tabela = 'administrador'
-    table = read_table(tabela)
+    table = read_table(tabela, oq_pegar="id, login")
     return render_template("read_table_adm.html",table=table)
 
 @app.route("/create_adm", methods=['POST', 'GET'])
@@ -182,7 +182,7 @@ def create_usuario():
 @app.route("/read_table_usuario")
 def read_table_usuario():  
     tabela = 'usuario'
-    table = read_table(tabela) 
+    table = read_table(tabela, oq_pegar="id, nome, sobrenome") 
     return render_template("read_table_usuario.html", table=table)
 
 @app.route("/update_usuario", methods=['POST', 'GET'])
@@ -216,7 +216,7 @@ def create_livro():
 @app.route("/read_table_livro")
 def read_table_livro():  
     tabela = 'livro'
-    table = read_table(tabela) 
+    table = read_table(tabela, oq_pegar="*") 
     return render_template("read_table_livro.html", table=table)
 
 @app.route("/update_livro", methods=['POST', 'GET'])
@@ -251,7 +251,7 @@ def create_historico():
 @app.route("/read_table_historico")
 def read_table_historico():  
     tabela = 'historico'
-    table = read_table(tabela)
+    table = read_table(tabela, oq_pegar="*")
     return render_template("read_table_historico.html", table=table)
 
 @app.route("/update_historico", methods=['POST', 'GET'])
@@ -286,7 +286,7 @@ def create_aluno():
 @app.route("/read_table_aluno")
 def read_table_aluno():   
     tabela = 'aluno'
-    table = read_table(tabela)
+    table = read_table(tabela, oq_pegar="*")
     return render_template("read_table_aluno.html", table=table)
 
 @app.route("/update_aluno", methods=['POST', 'GET'])
