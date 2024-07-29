@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login da biblioteca CG</title>
     <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
+    <link rel="stylesheet" href="static/git_hub_button.css">
 </head>
 <body>
+    <div class="div_git_hub">
+        <a href="{{ url_for('collaborators') }}">
+            <img src="static/imagem/github.png" alt="Descrição da Imagem" class="button_git_hub">
+        </a>
+    </div>
     <div class="login">
         <h1>login</h1>
         <form method="POST" action="{{ url_for('login') }}">

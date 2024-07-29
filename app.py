@@ -21,6 +21,32 @@ app.config['MYSQL_DB'] = "u895973460_Biblioteca"
 
 mysql = MySQL(app)
 
+def autenticar(login, senha):
+    cursor = mysql.connection.cursor()
+    senha_criptografada = sha256(senha.encode()).hexdigest()
+    
+    cursor.execute("SELECT senha FROM administrador WHERE login = %s", (login,))
+    admin_senha = cursor.fetchone()
+
+    if admin_senha:
+        if senha_criptografada == admin_senha[0]:
+            session['dynamic'] = 'adm'
+            cursor.execute("SELECT id FROM administrador WHERE login = %s", (login,))
+            id = cursor.fetchone()
+            return redirect(url_for('admin_dashboard'))
+
+    cursor.execute("SELECT senha FROM usuario WHERE nome = %s", (login,))
+    user_senha = cursor.fetchone()
+
+    if user_senha:
+        if senha_criptografada == user_senha[0]:
+            session['dynamic'] = 'user'
+            cursor.execute("SELECT id FROM usuario WHERE nome = %s", (login,))
+            id = cursor.fetchone()
+            return redirect(url_for('user_dashboard'))
+
+    return id, render_template('main.html', error='Invalid username/password')
+
 def read_table(tabela, oq_pegar):
     
     cursor = mysql.connection.cursor()
@@ -91,29 +117,6 @@ def inserir_historico(ra, codigo_livro, obs, estado):
     mysql.connection.commit()
     cur.close()
     
-
-def autenticar(login, senha):
-    cursor = mysql.connection.cursor()
-    senha_criptografada = sha256(senha.encode()).hexdigest()
-    
-    cursor.execute("SELECT senha FROM administrador WHERE login = %s", (login,))
-    admin_senha = cursor.fetchone()
-
-    if admin_senha:
-        if senha_criptografada == admin_senha[0]:
-            session['dynamic'] = 'adm'
-            return redirect(url_for('admin_dashboard'))
-
-    cursor.execute("SELECT senha FROM usuario WHERE nome = %s", (login,))
-    user_senha = cursor.fetchone()
-
-    if user_senha:
-        if senha_criptografada == user_senha[0]:
-            session['dynamic'] = 'user'
-            return redirect(url_for('user_dashboard'))
-
-    return render_template('main.html', error='Invalid username/password')
-
 @app.route('/')
 def home():
     return render_template("main.html")
@@ -125,6 +128,10 @@ def login():
         senha = request.form.get('password')
         return autenticar(login, senha)
     return redirect(url_for('home'))
+
+@app.route('/collaborators')
+def collaborators():
+    return render_template("collaborators.html")
 
 @app.route('/admin-dashboard')
 def admin_dashboard():
@@ -309,3 +316,4 @@ def delete_aluno():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

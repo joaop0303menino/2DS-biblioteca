@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.div_git_hub{
+    height: 100vh;
+    display: flex;
+    align-items: end;
+}
+
+.button_git_hub{
+    background: transparent;
+    width: 48px;
+    height: 48px;
+}
