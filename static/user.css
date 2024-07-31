@@ -164,6 +164,12 @@ p {
     color: #ffffff;
 }
 
+#estado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .box label {
     margin: 4px;
     padding: 0;

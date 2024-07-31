@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>biblioteca CG</title>
     <link rel="stylesheet" href="{{url_for('static', filename='menu.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,18 +15,27 @@
             </div>
 
             <ul>
-                <li><a href="user-dashboard">Menu</a></li>
-                <li><a href="read_table_aluno">Aluno</a></li>
-                <li><a href="read_table_livro">Livro</a></li>
-                <li><a href="read_table_historico">Histórico</a></li>
+                <a href="pagina-main">
+                    <span id="icon" class="bi bi-box-arrow-left"></span>
+                </a>
             </ul>
         </nav>
     </div>
-    <div class="text">
-        <h1>biblioteca CG</h1>
-        <h3>Bem vindo</h3>
-        <p>Este sistema foi feito para os administradores e responsáveis da biblioteca</p>
-        <p>Aqui você pode cadastrar livros, usuários e permitir que alunos peguem livros com mais segurança</p>
+    <div class="centralizar">
+            <ul class="livro">
+                <h1>livros</h1>
+                <li class="lista"><a class="bi bi-pencil-fill" href="lend_book">Emprestar livro</a></li>
+                <li class="lista"> <a href="return_book">Devolver livro</a></li>
+            </ul>
+            <ul>
+                <h1>historico</h1>
+                <li class="lista"><a class="bi bi-pencil-fill" href="read_table_historico">ver historico</a></li>
+            </ul>
+            <ul>
+                <h1>cadartar</h1>
+                <li class="lista"><a class="bi bi-pencil-fill" href="read_table_livro">cadartar livro</a></li>
+                <li class="lista"> <a href="read_table_aluno">cadartar aluno</a></li>
+            </ul>
     </div>
 </body>
-</html>
+</html> 

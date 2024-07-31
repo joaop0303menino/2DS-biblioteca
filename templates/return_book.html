@@ -11,7 +11,7 @@
     <div class="container">
         <nav>
             <div class="logo">
-                <span>EE Carlos Gomes</span>
+                <span>Devolver livro</span>
             </div>
 
             <ul>
@@ -25,10 +25,16 @@
     </div>
     <div class="centralizar">
         <div class="box">
-            <p>Tabela</p>
-            <div class="table-container">
-                {{ table|safe }}
-            </div>
+            <p>Para devolver digite as seguintes informações:</p>
+            <form method="POST" action="/return_book">
+                <label for="alteracao">Nome do livro</label>
+                <input type="text" id="alteracao" name="alteracao" required>
+                <label for="id">Id do histórico onde está o livro pendente</label>
+                <input type="text" id="id" name="id" required>
+                <label for="obs">Id do histórico onde está o livro pendente</label>
+                <input type="text" id="obs" name="observacao" required>
+                <button type="submit">Devolver</button>
+            </form>
         </div>
     </div>
 </body>

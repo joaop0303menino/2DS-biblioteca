@@ -70,6 +70,17 @@ def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondent
     mysql.connection.commit()
     cur.close()
 
+def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondente_a_identificacao, identificacao): 
+    
+    cur = mysql.connection.cursor()
+    if opcao_correspondente_a_mudanca == "senha":
+        mudanca = sha256(mudanca.encode()).hexdigest()
+                    
+    query = f"UPDATE {tabela} SET {opcao_correspondente_a_mudanca} = %s WHERE {pk_tabela_correspondente_a_identificacao} = %s"
+    cur.execute(query, (mudanca, identificacao))
+    mysql.connection.commit()
+    cur.close()
+    
 def delete(tabela,coluna,valor):
     query = f"DELETE FROM {tabela} WHERE {coluna} = %s;"
     cur = mysql.connection.cursor()
@@ -245,15 +256,15 @@ def delete_livro():
     return render_template("delete_livro.html")
 
 #Funções do histórico
-@app.route("/create_historico", methods=['POST', 'GET'])
-def create_historico():   
+@app.route("/lend_book", methods=['POST', 'GET'])
+def lend_book():   
     if request.method == 'POST':
         ra = request.form.get('ra')
         codigo = request.form.get('codigo')
         observacao = request.form.get('observacao')
         estado = request.form.get('estado')
         inserir_historico(ra, codigo, observacao, estado)
-    return render_template("create_historico.html")
+    return render_template("lend_book.html")
 
 @app.route("/read_table_historico")
 def read_table_historico():  
@@ -261,23 +272,23 @@ def read_table_historico():
     table = read_table(tabela, oq_pegar="*")
     return render_template("read_table_historico.html", table=table)
 
-@app.route("/update_historico", methods=['POST', 'GET'])
-def update_historico():   
+@app.route("/return_book", methods=['POST', 'GET'])
+def return_book():   
     if request.method == 'POST':
-        opcao = request.form.get('opcao')
         alteracao = request.form.get('alteracao')
         id = request.form.get('id')
+        opcao = request.form.get('observacao')
         update("historico",opcao,alteracao,'id',id) 
-    return render_template("update_historico.html")
+    return render_template("return_book.html")
 
-@app.route("/delete_historico", methods=['POST', 'GET'])
+'''@app.route("/delete_historico", methods=['POST', 'GET'])
 def delete_historico(): 
     if request.method == 'POST':
         tabela = 'historico'
         coluna ='RA_aluno'
         ra = request.form.get('text')
         delete(tabela,coluna,ra)    
-    return render_template("delete_historico.html")
+    return render_template("delete_historico.html")'''
 
 #Funções do aluno
 @app.route("/create_aluno", methods=['POST', 'GET'])
