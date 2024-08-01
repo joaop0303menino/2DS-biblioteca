@@ -1,4 +1,4 @@
-import integracao_sql as i_sql
+'''import integracao_sql as i_sql
 from hashlib import sha256
 
 cursor, conexao = i_sql.juncao_sql()
@@ -26,4 +26,4 @@ def autenticar(login, senha):
         else:
             return "Senha incorreta, tente novamente", False
 
-    return "Login inválido, tente novamente", False
+    return "Login inválido, tente novamente", False'''

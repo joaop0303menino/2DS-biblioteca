@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from flask_mysqldb import MySQL
 from hashlib import sha256
 
-cursor, conexao = i_sql.juncao_sql()
+'''cursor, conexao = i_sql.juncao_sql()'''
 
 app = Flask(__name__)
 

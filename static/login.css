@@ -23,9 +23,9 @@ body{
     border-radius: 15px;
 }
 
-h1{
-    margin: 0;
+.login h1{
     padding-top: 20px;
+    margin-top: 20px;
     padding-left: 0;
     padding-bottom: 20px;
     letter-spacing: 10px;
@@ -35,7 +35,7 @@ h1{
 }
 
 .login label{
-    margin: 4px;
+    margin: 13px;
     padding: 0;
     font-weight: bold;
 }
@@ -45,9 +45,26 @@ h1{
     margin-bottom: 20px;
 }
 
-.login input[type="text"], input[type="password"]{
+.login input[type="text"]{
+    margin-top: 15px;
     border: none;
-    background: transparent;
+    border-radius: 6px;
+    width: 200px;
+    background: #1d1d1d;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 5px;
+    height: 40px;
+    font-size: 16px;
+}
+
+
+.login input[type="password"]{
+    border: none;
+    border-radius: 6px;
+    width: 200px;
+    background: #1d1d1d;
+    padding-left: 15px;
     outline: none;
     height: 40px;
     font-size: 16px;
@@ -59,6 +76,7 @@ h1{
 }
 
 .login button[type="submit"]{
+    margin-top: 20px;
     color: #fff;
     background-color: #1d1d1d;
     padding: 10px;

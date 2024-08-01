@@ -1,4 +1,4 @@
-import mysql.connector
+'''import mysql.connector
 
 def juncao_sql():
     mydb = mysql.connector.connect(
@@ -16,3 +16,4 @@ def juncao_sql():
         return "Erro na conexão"
 
 
+'''

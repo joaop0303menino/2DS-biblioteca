@@ -1,4 +1,4 @@
-"""from hashlib import sha256
+'''"""from hashlib import sha256
 from datetime import datetime, timedelta
 from flask_mysqldb import MySQL 
 from flask import Flask, render_template, request, redirect, url_for,session
@@ -108,3 +108,4 @@ def inserir_historico(ra, codigo_livro, obs, estado):
     mysql.connection.commit()
     cur.close()
     
+'''
