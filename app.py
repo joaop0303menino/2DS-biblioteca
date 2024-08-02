@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from flask_mysqldb import MySQL
 from hashlib import sha256
 
-cursor, conexao = i_sql.juncao_sql()
+#cursor, conexao = i_sql.juncao_sql()
 
 app = Flask(__name__)
 
@@ -88,11 +88,11 @@ def delete(tabela,coluna,valor):
     mysql.connection.commit()
     cur.close()
     
-def inserir_administrador(login, senha):
+def inserir_administrador(login,nome, senha):
     senha_criptografada = sha256(senha.encode()).hexdigest()
-    query = "INSERT INTO administrador(login, senha) VALUES (%s, %s)"
+    query = "INSERT INTO administrador(login, senha) VALUES (%s,%s, %s)"
     cur = mysql.connection.cursor()
-    cur.execute(query, (login, senha_criptografada))
+    cur.execute(query, (login, nome, senha_criptografada))
     mysql.connection.commit()
     cur.close()
 

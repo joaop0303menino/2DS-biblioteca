@@ -1,4 +1,4 @@
-import flet as ft
+'''import flet as ft
 import integracao_sql as i_sql
 import pandas as pd
 from hashlib import sha256
@@ -50,3 +50,4 @@ def delete(tabela,coluna,valor):
 
 
     
+'''
