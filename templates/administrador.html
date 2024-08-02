@@ -10,37 +10,38 @@
 <body>
     <div class="container">
         <nav>
-            <div class="logo">
-                <span>EE Carlos Gomes</span>
-            </div>
-
-            <ul>
-                <a href="pagina-main">
-                    <span id="icon" class="bi bi-box-arrow-left"></span>
-                </a>
-            </ul>
+            <h1>Histórico</h1>
         </nav>
+    </div>
+    <div class="centralizar">
+        <div class="box">
+            <p>Tabela</p>
+            <div class="table-container">
+                {{ table|safe }}
+            </div>
+        </div>
     </div>
     <div class="centralizar">
         <div class="links">
             <ul>
-                <h1>livros</h1>
                 <li><a class="bi bi-book" href="lend_book">Emprestar livro</a></li>
                 <li><a class="bi bi-book" href="return_book">Devolver livro</a></li>
             </ul>
             <ul>
-                <h1>histórico</h1>
                 <li><a class="bi bi-pencil-fill" href="read_table_historico">ver historico</a></li>
             </ul>
             <ul>
-                <h1>Cadastrar</h1>
                 <li><a class="bi bi-person-add" href="read_table_adm">Cadastrar Adm</a></li>
                 <li><a class="bi bi-person-add" href="read_table_usuario">Cadastrar usuario</a></li>
                 <li><a class="bi bi-person-add" href="read_table_aluno">Cadastrar aluno</a></li>
             </ul>
             <ul>
-                <h1>Adicionar</h1>
                 <li><a class="bi bi-book" href="read_table_livro">Adicionar livro</a></li>
+            </ul>
+            <ul>
+                <a href="pagina-main">
+                    <span id="icon" class="bi bi-box-arrow-left"></span>
+                </a>
             </ul>
         </div>
     </div>

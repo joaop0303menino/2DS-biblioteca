@@ -31,8 +31,6 @@ def autenticar(login, senha):
     if admin_senha:
         if senha_criptografada == admin_senha[0]:
             session['dynamic'] = 'adm'
-            cursor.execute("SELECT id FROM administrador WHERE login = %s", (login,))
-            id = cursor.fetchone()
             return redirect(url_for('admin_dashboard'))
 
     cursor.execute("SELECT senha FROM usuario WHERE nome = %s", (login,))
@@ -41,11 +39,9 @@ def autenticar(login, senha):
     if user_senha:
         if senha_criptografada == user_senha[0]:
             session['dynamic'] = 'user'
-            cursor.execute("SELECT id FROM usuario WHERE nome = %s", (login,))
-            id = cursor.fetchone()
             return redirect(url_for('user_dashboard'))
 
-    return id, render_template('main.html', error='Invalid username/password')
+    return render_template('main.html', error='Invalid username/password')
 
 def read_table(tabela, oq_pegar):
     

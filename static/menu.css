@@ -5,9 +5,27 @@
 
 body{
     background-image: url(imagem/CG-2ds.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
 }
 
+.container{
+    padding: 20px;
+    background-color: antiquewhite;
+    height: 50px;
+}
 
+.container nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container nav h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
 
 /*
  body {
