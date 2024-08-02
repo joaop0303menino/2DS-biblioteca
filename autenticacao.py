@@ -26,5 +26,4 @@ def autenticar(login, senha):
         else:
             return "Senha incorreta, tente novamente", False
 
-    return "Login inválido, tente novamente", False
-'''
+    return "Login inválido, tente novamente", False'''

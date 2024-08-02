@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from flask_mysqldb import MySQL
 from hashlib import sha256
 
-#cursor, conexao = i_sql.juncao_sql()
+'''cursor, conexao = i_sql.juncao_sql()'''
 
 app = Flask(__name__)
 
@@ -130,7 +130,7 @@ def inserir_historico(ra, codigo_livro, obs, estado):
     
 @app.route('/')
 def home():
-    return render_template("main.html")
+    return render_template("login.html")
 
 @app.route('/pagina-main', methods=['POST', 'GET'])
 def login():
@@ -160,7 +160,7 @@ def user_dashboard():
 @app.route("/read_table_adm")
 def read_table_adm():
     tabela = 'administrador'
-    table = read_table(tabela, oq_pegar="id, login")
+    table = read_table(tabela, oq_pegar="login, nome")
     return render_template("read_table_adm.html",table=table)
 
 @app.route("/create_adm", methods=['POST', 'GET'])
@@ -280,15 +280,6 @@ def return_book():
         opcao = request.form.get('observacao')
         update("historico",opcao,alteracao,'id',id) 
     return render_template("return_book.html")
-
-'''@app.route("/delete_historico", methods=['POST', 'GET'])
-def delete_historico(): 
-    if request.method == 'POST':
-        tabela = 'historico'
-        coluna ='RA_aluno'
-        ra = request.form.get('text')
-        delete(tabela,coluna,ra)    
-    return render_template("delete_historico.html")'''
 
 #Funções do aluno
 @app.route("/create_aluno", methods=['POST', 'GET'])

@@ -1,5 +1,4 @@
-'''import flet as ft
-import integracao_sql as i_sql
+'''import integracao_sql as i_sql
 import pandas as pd
 from hashlib import sha256
 
