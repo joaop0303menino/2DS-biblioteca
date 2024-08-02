@@ -1,4 +1,16 @@
-body {
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(imagem/CG-2ds.jpg);
+}
+
+
+
+/*
+ body {
     overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
     background-position: center;
@@ -202,3 +214,4 @@ body {
 .centralizar .links{
     padding: 10px;
 }
+*/

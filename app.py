@@ -90,17 +90,17 @@ def delete(tabela,coluna,valor):
     
 def inserir_administrador(login,nome, senha):
     senha_criptografada = sha256(senha.encode()).hexdigest()
-    query = "INSERT INTO administrador(login, senha) VALUES (%s,%s, %s)"
+    query = "INSERT INTO administrador(login,nome senha) VALUES (%s,%s, %s)"
     cur = mysql.connection.cursor()
     cur.execute(query, (login, nome, senha_criptografada))
     mysql.connection.commit()
     cur.close()
 
-def inserir_usuario(nome, sobrenome, senha):
+def inserir_usuario(id, nome, sobrenome, senha):
     senha_criptografada = sha256(senha.encode()).hexdigest()
-    query = "INSERT INTO usuario(nome, sobrenome, senha) VALUES (%s, %s, %s)"
+    query = "INSERT INTO usuario(id_administrador,nome, sobrenome, senha) VALUES (%s,%s, %s, %s)"
     cur = mysql.connection.cursor()
-    cur.execute(query, (nome, sobrenome, senha_criptografada))
+    cur.execute(query, (id, nome, sobrenome, senha_criptografada))
     mysql.connection.commit()
     cur.close()
 
@@ -121,10 +121,11 @@ def inserir_livros(codigo, nome, quantidade):
 def inserir_historico(ra, codigo_livro, obs, estado):
     data_retirada = datetime.today()
     data_devolucao = data_retirada + timedelta(days=30)
+    prazo = ""
 
-    query = "INSERT INTO historico(RA_aluno, codigo_livro, dataRetirada, dataDevolucao, observacao, estado) VALUES (%s, %s, %s, %s, %s, %s)"
+    query = "INSERT INTO historico(RA_aluno, codigo_livro, dataRetirada, prazoDevolucao, data_da_devolucao, observacao, estado) VALUES (%s,%s, %s, %s, %s, %s, %s)"
     cur = mysql.connection.cursor()
-    cur.execute(query, (ra, codigo_livro, data_retirada, data_devolucao, obs, estado))
+    cur.execute(query, (ra, codigo_livro, data_retirada, data_devolucao,prazo , obs, estado))
     mysql.connection.commit()
     cur.close()
     
@@ -167,8 +168,9 @@ def read_table_adm():
 def create_adm():
     if request.method == 'POST':
         login = request.form.get('text')
+        nome = request.form.get('name')
         senha = request.form.get('password')
-        inserir_administrador(login,senha)
+        inserir_administrador(login,nome, senha)
     return render_template("create_adm.html")
 
 @app.route("/update_adm", methods=['POST', 'GET'])
@@ -194,7 +196,7 @@ def create_usuario():
         nome = request.form.get('nome')
         sobrenome = request.form.get('sobrenome')
         senha = request.form.get('password')
-        inserir_usuario(nome,sobrenome, senha)
+        inserir_usuario(id, nome ,sobrenome, senha)
     return render_template("create_usuario.html")
 
 @app.route("/read_table_usuario")
