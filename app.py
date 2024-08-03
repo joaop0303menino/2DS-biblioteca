@@ -144,7 +144,9 @@ def collaborators():
 @app.route('/admin-dashboard')
 def admin_dashboard():
     if 'dynamic' in session and session['dynamic'] == 'adm':
-        return render_template("administrador.html")
+        tabela = 'historico'
+        table = read_table(tabela, oq_pegar="RA_aluno, codigo_livro, dataRetirada, prazoDevolucao, data_da_devolucao, observacao, estado")
+        return render_template("administrador.html", table=table)
     return redirect(url_for('home'))
 
 @app.route('/user-dashboard')

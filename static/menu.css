@@ -4,16 +4,26 @@
 }
 
 body{
+    overflow: none;
     background-image: url(imagem/CG-2ds.jpg);
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; 
 }
 
-.container{
+.end{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+.end .container{
+    align-items: center;
     padding: 20px;
-    background-color: antiquewhite;
+    background-color: rgba(255, 255, 255, 0.753);
     height: 50px;
+    width: 1128px;
 }
 
 .container nav{
@@ -27,8 +37,13 @@ body{
     font-size: 40px;
 }
 
+.menu_lateral{
+    background-color: aquamarine;
+    width: 180px;
+    height: 99vh;
+}
 /*
- body {
+body {
     overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
     background-position: center;
@@ -69,60 +84,6 @@ body{
 
 .container nav ul li a:hover {
     background-color: rgb(130, 209, 255);
-}
-
-.menu_lateral {
-    position: fixed;
-    height: 600px;
-    width: 200px;
-    background-color: #38bdf8;
-    color: rgb(0, 0, 0);
-}
-
-.menu_lateral ul {
-    background-color: #38bdf8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 5px;
-    padding-top: 40px;
-}
-
-.menu_lateral ul li {
-    position: relative;
-    list-style: none;
-    width: 100%;
-}
-
-.menu_lateral ul li a {
-    position: relative;
-    display: flex;
-    width: 100%;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-.menu_lateral ul li a #icon {
-    position: relative;
-    display: block;
-    font-size: 2rem;
-    min-width: 60px;
-    height: 100px;
-    text-align: left;
-    line-height: 70px;
-    color: #000000;
-}
-
-.menu_lateral ul li a #icon .bi {
-    position: relative;
-    display: block;
-    font-size: 1.5rem;
-    z-index: 1;
-    padding-left: 10px;
-    height: 60px;
-    line-height: 60px;
-    white-space: nowrap;
 }
 
 .centralizar {
@@ -185,8 +146,62 @@ body {
     font-style: italic;
     color: #000000;
     font-weight: bold;
-}
-
+    }
+    
+    
+    .menu_lateral {
+        position: fixed;
+        height: 600px;
+        width: 200px;
+        background-color: #38bdf8;
+        color: rgb(0, 0, 0);
+    }
+    
+    .menu_lateral ul {
+        background-color: #38bdf8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-left: 5px;
+        padding-top: 40px;
+    }
+    
+    .menu_lateral ul li {
+        position: relative;
+        list-style: none;
+        width: 100%;
+    }
+    
+    .menu_lateral ul li a {
+        position: relative;
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    
+    .menu_lateral ul li a #icon {
+        position: relative;
+        display: block;
+        font-size: 2rem;
+        min-width: 60px;
+        height: 100px;
+        text-align: left;
+        line-height: 70px;
+        color: #000000;
+    }
+    
+    .menu_lateral ul li a #icon .bi {
+        position: relative;
+        display: block;
+        font-size: 1.5rem;
+        z-index: 1;
+        padding-left: 10px;
+        height: 60px;
+        line-height: 60px;
+        white-space: nowrap;
+    }
 .container nav #icon {
     padding: 10px 20px;
     text-decoration: none;
@@ -199,37 +214,81 @@ body {
 
 .container nav ul li a:hover {
     background-color: rgb(130, 209, 255);
-}
-
-.centralizar .links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.centralizar .links h1{
-    margin-bottom: 10px;
-    color: #000000;
-    text-transform: capitalize;
-    height: 35px;
-}
-
-.centralizar .links ul{
-    background-color: aliceblue;
-    color: #000;
-    padding: 20px;
-    margin: 25px;
-    font-size: 1.5rem;
-    border-radius: 15px;
-    transition: background-color 0.3s;
-}
-
-.centralizar .links ul .lista:hover {
-    background-color: #38bdf8;
-}
-
-.centralizar .links{
-    padding: 10px;
-}
+    }
+    
+    .centralizar .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        }
+        
+        .centralizar .links h1{
+            margin-bottom: 10px;
+            color: #000000;
+            text-transform: capitalize;
+            height: 35px;
+            }
+            
+            .centralizar .links ul{
+                background-color: aliceblue;
+                color: #000;
+                padding: 20px;
+                margin: 25px;
+                font-size: 1.5rem;
+                border-radius: 15px;
+                transition: background-color 0.3s;
+                }
+                
+                .centralizar .links ul .lista:hover {
+                    background-color: #38bdf8;
+                    }
+                    
+                    .centralizar .links{
+                        padding: 10px;
+                        }
+                        
+    
+    
+    .centralizar {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 100vh;
+    }
+    
+    .box {
+        position: fixed;
+        display: flex;
+        border: solid #1d1d1d;
+        backdrop-filter: blur(5px);
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 10px;
+        color: rgb(0, 0, 0);
+        width: 850px;
+        height: 350px;
+    }
+    .table-container {
+        overflow-y: auto;  
+        height: 60vh;     
+    }
+    
+    table {
+        border-collapse: collapse;
+        color: #ffffff;
+        width: 100%;  
+    }
+    
+    th, td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 2px solid #000000;
+        background-color: #00ffd5c4;
+    }
+    
+    th {
+        background-color: #2f0ad6;
+    } 
 */
