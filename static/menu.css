@@ -8,14 +8,15 @@ body{
     background-image: url(imagem/CG-2ds.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; 
+    height: 100vh;
+    width: 100vh;
 }
 
 .end{
     display: flex;
     justify-content: end;
     align-items: center;
-    background-color: blueviolet;
+    position: absolute;
 }
 
 .end .container{
@@ -23,7 +24,7 @@ body{
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.753);
     height: 50px;
-    width: 1128px;
+    width: 1320px;
 }
 
 .container nav{
@@ -38,10 +39,23 @@ body{
 }
 
 .menu_lateral{
+    position: absolute;
+    padding: 0;
     background-color: aquamarine;
     width: 180px;
     height: 99vh;
 }
+
+.menu_lateral .links {
+    position: relative;
+    margin: 10px;
+    align-items: center;
+}
+.menu_lateral .links ul li a{
+    color: #1d1d1d;
+}
+
+
 /*
 body {
     overflow: hidden;
