@@ -43,7 +43,7 @@ body{
     padding: 0;
     background-color: aquamarine;
     width: 180px;
-    height: 99vh;
+    height: 100vh;
 }
 
 .menu_lateral .links {
@@ -51,8 +51,32 @@ body{
     margin: 10px;
     align-items: center;
 }
+
+.menu_lateral .links ul{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 50px;
+}
+
+.menu_lateral .links ul li{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+}
+
 .menu_lateral .links ul li a{
     color: #1d1d1d;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu_lateral .links ul li a span{
+    color: rgb(255, 255, 255);
+    image-orientation: from-image;
+    padding-top: 100vh;
 }
 
 

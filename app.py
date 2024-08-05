@@ -137,6 +137,7 @@ def login():
         return autenticar(login, senha)
     return redirect(url_for('home'))
 
+
 @app.route('/collaborators')
 def collaborators():
     return render_template("collaborators.html")
