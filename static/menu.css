@@ -1,13 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 body{
-    overflow: none;
+    overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100vh;
 }
@@ -39,45 +38,69 @@ body{
 }
 
 .menu_lateral{
+    display: flex;
     position: absolute;
-    padding: 0;
     background-color: aquamarine;
-    width: 180px;
-    height: 100vh;
+    width: 13%;
+    height: 100%;
 }
-
+.menu_lateral .links ul{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .menu_lateral .links {
     position: relative;
-    margin: 10px;
-    align-items: center;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.menu_lateral .links ul{
-    top: 0;
-    left: 0;
+.menu_lateral .low_bar_login{
+    display: flex;
+    align-items: end;
+}
+
+.menu_lateral .low_bar_login .button_login{
+    position: absolute;
+    display: flex;
     width: 100%;
-    padding-left: 5px;
-    padding-top: 50px;
+    height: 7%;
+    align-items: end;
 }
 
-.menu_lateral .links ul li{
-    top: 0;
-    left: 0;
+ul{
+    list-style: none;
+    background-color: aquamarine;
+    width: 13%;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+}
+ul li a{
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    color: blue;
+}
+ul li .sub_menu_resp li{
+    display: block;
+}
+ul li .sub_menu_resp{
+    background: aquamarine;
+    padding: 20px 25px;
+    position: absolute;
     width: 100%;
-    padding-top: 20px;
+    display: none;
+}
+ul .dropdown:hover .sub_menu_resp{
+    display: block;
 }
 
-.menu_lateral .links ul li a{
-    color: #1d1d1d;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
 
-.menu_lateral .links ul li a span{
-    color: rgb(255, 255, 255);
-    image-orientation: from-image;
-    padding-top: 100vh;
-}
+
+
 
 
 /*
@@ -328,5 +351,5 @@ body {
     
     th {
         background-color: #2f0ad6;
-    } 
+    } 
 */

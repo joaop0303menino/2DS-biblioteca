@@ -19,29 +19,60 @@
         <div class="box">
             <div class="table-container">
                 {{ table|safe }}
+                </div>
+                </div> -->
             </div>
-        </div> -->
-    </div>
-    <div class="menu_lateral">
-        <div class="links">
-            <ul>
-                <li><a class="bi bi-book" href="lend_book">Emprestar livro</a></li>
-                <li><a class="bi bi-book" href="return_book">Devolver livro</a></li>
-            </ul>
-            <ul>
-                <li><a class="bi bi-person-add" href="read_table_adm">Cadastrar Adm</a></li>
-                <li><a class="bi bi-person-add" href="read_table_usuario">Cadastrar usuario</a></li>
-                <li><a class="bi bi-person-add" href="read_table_aluno">Cadastrar aluno</a></li>
-            </ul>
-            <ul>
-                <li><a class="bi bi-book" href="read_table_livro">Adicionar livro</a></li>
-            </ul>
-            <ul>
-                <a href="pagina-main">
-                    <span id="icon" class="bi bi-box-arrow-left"></span>
-                </a>
-            </ul>
-        </div>
+            <div class="menu_lateral">
+                <div class="low_bar_login">
+                    <div class="button_login">
+                        <ul class="close_page_main">
+                            <a href="pagina-main">
+                                <span id="icon" class="bi bi-box-arrow-left"></span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="links">    
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="bi bi-caret-down-fill">
+                                Responsável 
+                            </a>
+                            <ul class="sub_menu_resp">
+                                <li><a href="#">Administrador</a></li>
+                                <li><a href="#">Usuário</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="bi bi-caret-down-fill">
+                                Aluno 
+                            </a>
+                            <ul class="sub_menu_resp">
+                                <li><a href="#" class="bi bi-plus-square">adicionar</a></li>
+                                <li><a href="#" class="bi bi-table">Tabela</a></li>
+                                <li><a href="#" class="bi bi-pencil-square">Alterar</a></li>
+                                <li><a href="#" class="bi bi-trash">Deletar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="bi bi-caret-down-fill">
+                                Livro 
+                            </a>
+                            <ul class="sub_menu_resp">
+                                <li><a href="#" class="bi bi-plus-square">adicionar</a></li>
+                                <li><a href="#" class="bi bi-table">Tabela</a></li>
+                                <li><a href="#" class="bi bi-pencil-square">Alterar</a></li>
+                                <li><a href="#" class="bi bi-trash">Deletar</a></li>
+                                <li><a class="bi bi-book" href="lend_book">Emprestar</a></li>
+                                <li><a class="bi bi-book" href="return_book">Devolver</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
     </div>
 </body>
-</html> 
+</html>
