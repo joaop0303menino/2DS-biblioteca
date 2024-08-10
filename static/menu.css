@@ -1,25 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-body{
-    overflow: none;
+body {
+    overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100vh;
 }
 
-.end{
+.end {
     display: flex;
     justify-content: end;
     align-items: center;
     position: absolute;
 }
 
-.end .container{
+.end .container {
     align-items: center;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.753);
@@ -27,103 +26,16 @@ body{
     width: 1320px;
 }
 
-.container nav{
+.container nav {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container nav h1{
+.container nav h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 40px;
 }
-
-.menu_lateral{
-    position: absolute;
-    padding: 0;
-    background-color: aquamarine;
-    width: 180px;
-    height: 100vh;
-}
-
-.menu_lateral .links {
-    position: relative;
-    margin: 10px;
-    align-items: center;
-}
-
-.menu_lateral .links ul{
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 5px;
-    padding-top: 50px;
-}
-
-.menu_lateral .links ul li{
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 20px;
-}
-
-.menu_lateral .links ul li a{
-    color: #1d1d1d;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.menu_lateral .links ul li a span{
-    color: rgb(255, 255, 255);
-    image-orientation: from-image;
-    padding-top: 100vh;
-}
-
-
-/*
-body {
-    overflow: hidden;
-    background-image: url(imagem/CG-2ds.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.container {
-    background-color: rgba(255, 255, 255, 0.432);
-    max-width: 1400px;
-    padding: 1%;
-    margin: 0 auto;
-}
-
-.container nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.container nav .logo {
-    font-size: 35px;
-    font-style: italic;
-    color: #000000;
-    font-weight: bold;
-}
-
-.container nav #icon{
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 19px;
-    color: #ffffff;
-    background-color: beige;
-    border-radius: 30px;
-    transition: 0.6s;
-}
-
-.container nav ul li a:hover {
-    background-color: rgb(130, 209, 255);
-}
-
 .centralizar {
     display: flex;
     align-items: center;
@@ -145,188 +57,77 @@ body {
     height: 350px;
 }
 
-.centralizar ul .lista{
-    background-color: aliceblue;
-    color: #000;
+.table-container {
+    overflow-y: auto;
+    height: 60vh;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+table {
+    border-collapse: collapse;
+    color: #ffffff;
+    width: 100%;
 }
 
-body {
-    overflow: hidden;
-    background-image: url(imagem/CG-2ds.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 2px solid #000000;
+    background-color: #00ffd5c4;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.432);
-    max-width: 1400px;
-    padding: 1%;
-    margin: 0 auto;
+th {
+    background-color: #2f0ad6;
 }
 
-.container nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.side_bar{
+    background-color: #1d1d1d;
+    width: 13%;
+    height: 100%;
+    position: fixed;
 }
 
-.container nav .logo {
-    font-size: 35px;
-    font-style: italic;
-    color: #000000;
-    font-weight: bold;
-    }
-    
-    
-    .menu_lateral {
-        position: fixed;
-        height: 600px;
-        width: 200px;
-        background-color: #38bdf8;
-        color: rgb(0, 0, 0);
-    }
-    
-    .menu_lateral ul {
-        background-color: #38bdf8;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding-left: 5px;
-        padding-top: 40px;
-    }
-    
-    .menu_lateral ul li {
-        position: relative;
-        list-style: none;
-        width: 100%;
-    }
-    
-    .menu_lateral ul li a {
-        position: relative;
-        display: flex;
-        width: 100%;
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-    }
-    
-    .menu_lateral ul li a #icon {
-        position: relative;
-        display: block;
-        font-size: 2rem;
-        min-width: 60px;
-        height: 100px;
-        text-align: left;
-        line-height: 70px;
-        color: #000000;
-    }
-    
-    .menu_lateral ul li a #icon .bi {
-        position: relative;
-        display: block;
-        font-size: 1.5rem;
-        z-index: 1;
-        padding-left: 10px;
-        height: 60px;
-        line-height: 60px;
-        white-space: nowrap;
-    }
-.container nav #icon {
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 19px;
-    color: #1d1d1d;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 30px;
-    transition: 0.6s;
+.side_bar .menu{
+    margin-top: 185px;
+    width: 100%;
 }
 
-.container nav ul li a:hover {
-    background-color: rgb(130, 209, 255);
-    }
-    
-    .centralizar .links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        }
-        
-        .centralizar .links h1{
-            margin-bottom: 10px;
-            color: #000000;
-            text-transform: capitalize;
-            height: 35px;
-            }
-            
-            .centralizar .links ul{
-                background-color: aliceblue;
-                color: #000;
-                padding: 20px;
-                margin: 25px;
-                font-size: 1.5rem;
-                border-radius: 15px;
-                transition: background-color 0.3s;
-                }
-                
-                .centralizar .links ul .lista:hover {
-                    background-color: #38bdf8;
-                    }
-                    
-                    .centralizar .links{
-                        padding: 10px;
-                        }
-                        
-    
-    
-    .centralizar {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        height: 100vh;
-    }
-    
-    .box {
-        position: fixed;
-        display: flex;
-        border: solid #1d1d1d;
-        backdrop-filter: blur(5px);
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        padding-top: 10px;
-        color: rgb(0, 0, 0);
-        width: 850px;
-        height: 350px;
-    }
-    .table-container {
-        overflow-y: auto;  
-        height: 60vh;     
-    }
-    
-    table {
-        border-collapse: collapse;
-        color: #ffffff;
-        width: 100%;  
-    }
-    
-    th, td {
-        padding: 8px 12px;
-        text-align: left;
-        border: 2px solid #000000;
-        background-color: #00ffd5c4;
-    }
-    
-    th {
-        background-color: #2f0ad6;
-    } 
-*/
+.side_bar .menu .item a{
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    padding: 7px;
+    transition: 1s;
+}
+
+.side_bar .menu .item a:hover{
+    background-color: blue;
+    transition: 0.3s;
+}
+
+.side_bar .menu .item i{
+    margin-right: 5px;
+}
+
+.side_bar .menu .item a .dropdown{
+    position: absolute;
+    right: 0;
+    transition: 0.3s;
+    transition: 1s;
+}
+
+.side_bar .menu .item .sub_menu{
+    background-color: rgba(255, 255, 255, 0.1);
+    display: block;
+}
+
+.side_bar .menu .item .sub_menu a{
+    padding-left: 30px;
+    display: none;
+    transition: 1s;
+}
+
+.side_bar .menu .item:hover .sub_menu a{
+    display: block;
+}

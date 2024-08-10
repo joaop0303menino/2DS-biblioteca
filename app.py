@@ -248,7 +248,7 @@ def update_livro():
     return render_template("update_livro.html")
 
 @app.route("/delete_livro", methods=['POST', 'GET'])
-def delete_livro(): 
+def delete_livro():
     if request.method == 'POST':
         tabela = 'livro'
         coluna ='codigo'
