@@ -1,19 +1,13 @@
-'''import mysql.connector
+from flask_mysqldb import MySQL
 
-def juncao_sql():
-    mydb = mysql.connector.connect(
-        host="149.100.155.154",
-        user="u895973460_carlos_gomes",
-        password="123456789Carlos_gomes",
-        database="u895973460_Biblioteca"
-    )
+def intergracao(app):
+    app.secret_key = f'mEninO/Oliveira/0319'
+
+    app.config['MYSQL_HOST'] = "149.100.155.154"
+    app.config['MYSQL_USER'] = "u895973460_carlos_gomes"
+    app.config['MYSQL_PASSWORD'] = "123456789Carlos_gomes"
+    app.config['MYSQL_DB'] = "u895973460_Biblioteca"
+
+    mysql = MySQL(app)
     
-    try:
-        print('Conexão bem sucedida')
-        cursor = mydb.cursor()
-        return cursor, mydb
-    except:
-        return "Erro na conexão"
-
-
-'''
+    return mysql

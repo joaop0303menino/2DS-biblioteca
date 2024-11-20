@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    overflow: none;
 }
 
 body {
     overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
+    background-repeat: no-repeat;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
 .end {
@@ -23,7 +25,7 @@ body {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.753);
     height: 50px;
-    width: 1320px;
+    width: 100vw;
 }
 
 .container nav {
@@ -37,10 +39,10 @@ body {
     font-size: 40px;
 }
 .centralizar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%);
 }
 
 .box {
@@ -80,7 +82,7 @@ th {
 }
 
 .side_bar{
-    background-color: #1d1d1d;
+    background-color: rgba(197, 255, 250, 0.938);
     width: 13%;
     height: 100%;
     position: fixed;
@@ -92,9 +94,9 @@ th {
 }
 
 .side_bar .menu .item a{
-    border: 1px solid #fff;
+    border: 1px solid #000000;
     background-color: transparent;
-    color: #fff;
+    color: #000000;
     font-size: 16px;
     display: block;
     padding: 7px;

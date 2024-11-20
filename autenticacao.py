@@ -1,29 +1,24 @@
-'''import integracao_sql as i_sql
+from flask import *
 from hashlib import sha256
 
-cursor, conexao = i_sql.juncao_sql()
-
-def autenticar(login, senha):
-    # Verifica se o login pertence a um administrador
-    cursor.execute("SELECT login, senha FROM administrador WHERE login = %s", (login,))
-    admin = cursor.fetchone()
+def autenticar(login, senha, mysql):
+    cursor = mysql.connection.cursor()
+    senha_criptografada = sha256(senha.encode()).hexdigest()
     
-    if admin:
-        senha_criptografada = sha256(senha.encode()).hexdigest()
-        if senha_criptografada == admin[1]:
-            return "Bem-vindo ADM", True
-        else:
-            return "Senha incorreta, tente novamente", False
+    cursor.execute("SELECT senha FROM administrador WHERE login = %s", (login,))
+    admin_senha = cursor.fetchone()
 
-    # Verifica se o login pertence a um usuário
-    cursor.execute("SELECT nome, senha FROM usuario WHERE nome = %s", (login,))
-    user = cursor.fetchone()
+    if admin_senha:
+        if senha_criptografada == admin_senha[0]:
+            session['dynamic'] = 'adm'
+            return redirect(url_for('admin_dashboard'))
 
-    if user:
-        senha_criptografada = sha256(senha.encode()).hexdigest()
-        if senha_criptografada == user[1]:
-            return "Bem-vindo usuário", True
-        else:
-            return "Senha incorreta, tente novamente", False
+    cursor.execute("SELECT senha FROM usuario WHERE nome = %s", (login,))
+    user_senha = cursor.fetchone()
 
-    return "Login inválido, tente novamente", False'''
+    if user_senha:
+        if senha_criptografada == user_senha[0]:
+            session['dynamic'] = 'user'
+            return redirect(url_for('user_dashboard'))
+
+    return render_template('main.html', error='Invalid username/password')
