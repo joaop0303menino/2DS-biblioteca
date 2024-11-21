@@ -3,131 +3,38 @@
     padding: 0;
     box-sizing: border-box;
     overflow: none;
+    text-decoration: none;
+    list-style: none;
+    overflow: hidden;
+}
+
+html{
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    overflow: hidden;
     background-image: url(imagem/biblioteca-CG.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
-.container {
-    background-color: white;
-    max-width: 1400px;
-    padding: 1%;
-    margin: 0 auto;
-}
 
 .container nav {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between;
 }
 
-.container nav .logo {
-    font-size: 35px;
-    font-style: italic;
-    color: #000000;
-    font-weight: bold;
-}
-
-.container nav ul {
-    list-style: none;
-}
-
-.container nav ul li {
-    display: inline-block;
-    margin: 5px;
-}
-
-.container nav ul li a {
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 19px;
-    color: #3b3b3b;
-    border-radius: 30px;
-    transition: 0.6s;
-}
-
-.container nav ul li a:hover {
-    background-color: rgb(130, 209, 255);
-}
-
-.side_bar{
-    background-color: rgba(197, 255, 250, 0.938);
-    width: 13%;
-    height: 100%;
-    position: fixed;
-}
-
-.side_bar .menu{
-    margin-top: 185px;
-    width: 100%;
-}
-
-.side_bar .menu .item a{
-    border: 1px solid #000000;
-    background-color: transparent;
-    color: #000000;
-    font-size: 16px;
-    display: block;
-    padding: 7px;
-    transition: 1s;
-}
-
-.side_bar .menu .item a:hover{
-    background-color: blue;
-    transition: 0.3s;
-}
-
-.side_bar .menu .item i{
-    margin-right: 5px;
-}
-
-.side_bar .menu .item a .dropdown{
-    position: absolute;
-    right: 0;
-    transition: 0.3s;
-    transition: 1s;
-}
-
-.side_bar .menu .item .sub_menu{
-    background-color: rgba(255, 255, 255, 0.1);
-    display: block;
-}
-
-.side_bar .menu .item .sub_menu a{
-    padding-left: 30px;
-    display: none;
-    transition: 1s;
-}
-
-.side_bar .menu .item:hover .sub_menu a{
-    display: block;
-}
 
 .centralizar {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-}
-
-.box {
-    position: fixed;
-    display: flex;
-    border: solid #1d1d1d;
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 10px;
-    color: rgb(0, 0, 0);
-    width: 850px;
-    height: 350px;
 }
 
 .table-container {
@@ -170,249 +77,110 @@ p {
     align-items: center;
 }
 
-.box label {
-    margin: 4px;
-    padding: 0;
-    font-weight: bold;
-}
-
-.box input {
+.container {
+    margin-left: 13%;
     width: 100%;
-    margin-bottom: 20px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 7% auto;
 }
 
-.box input {
-    border: 1px solid #ffffff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #000000;
-    font-size: 16px;
-}
-
-.box input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 35px;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 20px;
-    transition: 0.2s;
-}
-
-.box input[type="submit"]:hover {
-    cursor: pointer;
-    background-color: #ff4d4d;
-    transition: 0.2s;
-}
-
-
-
-
-
-/**{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    overflow: hidden;
-    background-image: url(imagem/biblioteca-CG.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.container{
-    background-color: white;
-    max-width: 1400px;
-    padding: 1%;
-    margin: 0 auto;
-}
-
-.container nav{
-    display: flex;
+.logo {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    display: grid;
     align-items: center;
-    justify-content: space-between;
-}
-
-.container nav .logo{
+    grid-template-columns: 20% auto;
+    width: 100%;
+    height: 100%;
     font-size: 35px;
     font-style: italic;
-    color: #000000;
+    color: #000;
     font-weight: bold;
 }
 
-.container nav ul{
-    list-style: none;
+.logo span{
+    margin: 10px;
 }
 
-.container nav ul li{
-    display: inline-block;
-    margin: 5px;
-}
-
-.container nav ul li a{
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 19px;
-    color: #3b3b3b;
-    border-radius: 30px;
-    transition: 0.6s;
-}
-
-.container nav ul li a:hover{
-    background-color: rgb(130, 209, 255);
-}
-
-.menu_lateral{
-    position: fixed;
-    height: 600px;
-    width: 200px;
-    background-color: #38bdf8;
-    color: rgb(255, 255, 255);
-}
-
-.menu_lateral ul{
-    background-color: #38bdf8;
-    position: absolute;
-    top: 0;
-    left: 0;
+.logo ul li{
     width: 100%;
-    padding-left: 5px;
-    padding-top: 40px;
-}
-
-.menu_lateral ul li{
-    position: relative;
-    list-style: none;
-    width: 100%;
-}
-
-.menu_lateral ul li a{
-    position: relative;
-    display: flex;
-    width: 100%;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.menu_lateral ul li a #icon{
-    position: relative;
-    display: block;
-    font-size: 2rem;
-    min-width: 60px;
-    height: 100px;
-    text-align: left;
-    line-height: 70px;
-    color: #ffffff;
-}
-
-.menu_lateral ul li a #icon .bi{
-    position: relative;
-    display: block;
-    font-size: 1.5rem;
-    z-index: 1;
-    padding-left: 10px;
-    height: 60px;
-    line-height: 60px;
-    white-space: nowrap;
-}
-
-.conteudo{
-    display: flex;
+    height: 100%;
+    color: #000;
+    margin-left: 77%;
+    display: grid;
     align-items: center;
-    justify-content: center;
-    color: white;
 }
 
-.centralizar {
-    display: flex;
+.lend_book{
+    display: grid;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.box{
-    position: fixed;
-    display: flex;
-    border:  solid #1d1d1d;
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 10px;
-    color: rgb(0, 0, 0);
-    width: 850px;
-    height: 350px;
-}
-
-p{
-    margin: 0;
-    padding-top: 40px;
-    padding-left: 0;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 25px;
-    color: #ffffff;
-}
-
-.box label{
-    margin: 4px;
-    padding: 0;
-    font-weight: bold;
-}
-
-.box input{
+    margin-left: 22%;
+    height: 100%;
     width: 100%;
-    margin-bottom: 20px;
 }
 
-.box input{
-    border: 1px solid #ffffff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #000000;
-    font-size: 16px;
+.lend_book_form{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 40%;
+    height: 50%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 60%;
+    grid-template-rows: 6% repeat(4, 15%) 10%;
 }
 
-.box input[type="submit"]{
-    border: none;
-    outline: none;
-    height: 35px;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 20px;
-    transition: 0.2s;
+.lend_book_form input[type="text"], button[type="submit"]{
+    margin-top: 3%;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #000;
     
 }
 
-.box input[type="submit"] hover{
-    cursor: pointer;
-    background-color: #ff4d4d;
-    transition: 0.2s;
+.lend_book_form button[type="submit"]{
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 10px;
 }
 
-
-table {
-    border-collapse: collapse;
-    color: #ffffff;
+.organization_check{
+    font-size: 25px;
+    margin-top: 3%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 20%);
+    grid-template-rows: repeat(2, 50%);
 }
 
-th, td {
-    padding: 8px 12px;
-    text-align: left;
-    border: 2px solid #ffffff;
-    background-color: #38bdf8;
+.return_book_form{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 40%;
+    height: 40%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 60%;
+    grid-template-rows: 6% repeat(3, 18%) 15%;
 }
 
-th {
-    background-color:#0484bb;
-}
-*/
+.return_book_form input[type="text"], button[type="submit"]{
+    margin-top: 3%;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #000;
 
+}
+
+.return_book_form button[type="submit"]{
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 10px;
+}
+    
