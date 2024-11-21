@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="static/git_hub_button.css">
 </head>
 <body>
-    <div class="div_git_hub">
-        <a href="{{ url_for('collaborators') }}">
-            <img src="static/imagem/github.png" alt="Descrição da Imagem" class="button_git_hub">
-        </a>
-    </div>
     <div class="login">
-        <h1>login</h1>
+        <div class="colab">
+            <a href="{{ url_for('collaborators') }}">
+                @Collaborators
+            </a>
+        </div>
+        <h1>Entre</h1>
         <form method="POST" action="{{ url_for('login') }}">
             <label for="text">Login:</label>
-            <input type="text" id="text" name="text" required>
+            <input type="text" id="text" name="text" placeholder="Digite seu usuário..." required>
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="Digite Sua senha..." required>
             <div class="center">
                 <button class="entrar" type="submit">Entrar</button>
             </div>

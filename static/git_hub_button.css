@@ -1,16 +1,17 @@
-*{
-    padding: 0;
-    margin: 0;
+.colab{
+    text-align: center;
+    position: relative;
+    top: 300px;
+    font-size: 10px
 }
 
-.div_git_hub{
-    height: 100vh;
-    display: flex;
-    align-items: end;
+.colab a{
+    text-decoration: none;
+    color: #ffffffda;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.button_git_hub{
-    background: transparent;
-    width: 48px;
-    height: 48px;
+.colab a:hover{
+    color: #ffffff48;
+    transform: scale(1.05);
 }

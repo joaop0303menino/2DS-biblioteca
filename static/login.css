@@ -1,75 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Goldman:wght@400;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Domine", serif;
+}
+
 body{
     margin: 0;
     padding: 0;
-    background-image:url(imagem/Escadão.jpg);
+    background-image: url(imagem/Escadão.jpg);
     background-size: cover;
-    font-family:Arial, Helvetica, sans-serif;
-
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .login{
-    width: 320px;
-    height: 320px;
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    min-height: 320px;
     border: 2px solid #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.863);
     color: #fff;
     background-color: transparent;
     backdrop-filter: blur(5px);
+    position: fixed;
     top: 50%;
     left: 50%;
-    position: fixed;
     transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 68px, 28px;
+    padding: 68px 28px;
     border-radius: 15px;
 }
 
 .login h1{
-    padding-top: 20px;
-    margin-top: 20px;
-    padding-left: 0;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
+    position: relative;
+    bottom: 40px;
+  
+    letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
     font-size: 25px;
 }
 
 .login label{
-    margin: 13px;
-    padding: 0;
+    position: relative;
+    bottom: 10px;
     font-weight: bold;
 }
 
 .login input{
     width: 100%;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.login input[type="text"]{
-    margin-top: 15px;
+.login input[type="text"], .login input[type="password"]{
     border: none;
     border-radius: 6px;
-    width: 200px;
-    color: #fff;
-    background: #1d1d1d;
-    outline: none;
-    padding-left: 15px;
-    padding-right: 5px;
-    height: 40px;
-    font-size: 16px;
-}
-
-
-.login input[type="password"]{
-    border: none;
-    border-radius: 6px;
-    width: 200px;
     color: #fff;
     background: #1d1d1d;
     padding-left: 15px;
     outline: none;
     height: 40px;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login input[type="text"]:hover, .login input[type="password"]:hover{
+    background-color: #000000c2;
+    transform: scale(1.05);
 }
 
 .login .center{
@@ -81,8 +82,62 @@ body{
     margin-top: 20px;
     color: #fff;
     background-color: #1d1d1d;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px 50px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login button[type="submit"]:hover{
+    background-color: #000000bb;
+    transform: scale(1.05);
+}
+
+form{
+    position: relative;
+    top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .login {
+        padding: 40px 20px;
+        max-width: 90%;
+        min-height: 280px;
+    }
+    
+    .login h1 {
+        font-size: 20px;
+    }
+
+    .login input[type="text"], .login input[type="password"] {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .login button[type="submit"] {
+        padding: 8px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        padding: 30px 15px;
+        max-width: 85%;
+        min-height: 250px;
+    }
+    
+    .login h1 {
+        font-size: 18px;
+        letter-spacing: 5px;
+    }
+
+    .login input[type="text"], .login input[type="password"] {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .login button[type="submit"] {
+        padding: 8px 25px;
+    }
 }
