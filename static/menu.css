@@ -2,94 +2,93 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: none;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+html{
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    overflow: hidden;
     background-image: url(imagem/CG-2ds.jpg);
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
-.end {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    position: absolute;
+
+.container_main{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 13% auto;
+    grid-template-rows: 100%;
 }
 
-.end .container {
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.753);
-    height: 50px;
-    width: 100vw;
+.align_title_table{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 7% auto;
 }
 
-.container nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container nav h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 40px;
-}
-.centralizar {
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-}
-
-.box {
-    position: fixed;
-    display: flex;
-    border: solid #1d1d1d;
+.container{
+    background-color: transparent;
     backdrop-filter: blur(5px);
-    justify-content: center;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    padding-top: 10px;
-    color: rgb(0, 0, 0);
-    width: 850px;
-    height: 350px;
+}
+
+.centralizar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .table-container {
-    overflow-y: auto;
-    height: 60vh;
+    overflow-y: auto;  /* Adiciona a rolagem vertical */
+    height: 500px;     /* Define a altura da div com rolagem */
 }
+
+.table-container::-webkit-scrollbar {
+    width: 7px;
+    height: 8px;
+    background-color: #000;
+  }
 
 table {
     border-collapse: collapse;
     color: #ffffff;
-    width: 100%;
+    width: 100%;  /* Garante que a tabela use toda a largura da div */
 }
 
 th, td {
     padding: 8px 12px;
     text-align: left;
-    border: 2px solid #000000;
-    background-color: #00ffd5c4;
+    border: 2px solid #ffffff;
+    background-color: #38bdf8;
 }
 
 th {
-    background-color: #2f0ad6;
+    background-color: #0484bb;
 }
 
 .side_bar{
     background-color: rgba(197, 255, 250, 0.938);
-    width: 13%;
+    width: 100%;
     height: 100%;
-    position: fixed;
+    display: grid;
+    align-items: center;
 }
 
 .side_bar .menu{
-    margin-top: 185px;
     width: 100%;
 }
 
@@ -113,7 +112,6 @@ th {
 }
 
 .side_bar .menu .item a .dropdown{
-    position: absolute;
     right: 0;
     transition: 0.3s;
     transition: 1s;

@@ -8,7 +8,7 @@ import dic
 app = Flask(__name__)
 
 mysql = i_sql.intergracao(app)
-   
+
 @app.route('/')
 def home():
     return render_template("login.html")
