@@ -2,185 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: none;
-    text-decoration: none;
-    list-style: none;
-    overflow: hidden;
 }
 
-html{
-    height: 100%;
-    width: 100%;
-}
-
-body {
+body{
+    /* Config BackGround */
     background-image: url(imagem/biblioteca-CG.jpg);
-    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
-
-
-.container nav {
-    display: grid;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.centralizar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-attachment: fixed;
     height: 100vh;
-}
-
-.table-container {
-    overflow-y: auto;  /* Adiciona a rolagem vertical */
-    height: 250px;     /* Define a altura da div com rolagem */
-}
-
-table {
-    border-collapse: collapse;
-    color: #ffffff;
-    width: 100%;  /* Garante que a tabela use toda a largura da div */
-}
-
-th, td {
-    padding: 8px 12px;
-    text-align: left;
-    border: 2px solid #ffffff;
-    background-color: #38bdf8;
-}
-
-th {
-    background-color: #0484bb;
-}
-
-p {
-    margin: 0;
-    padding-top: 40px;
-    padding-left: 0;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 25px;
-    color: #ffffff;
-}
-
-#estado{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.container {
-    margin-left: 13%;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 7% auto;
-}
-
-.logo {
-    background-color: transparent;
-    backdrop-filter: blur(5px);
-    display: grid;
-    align-items: center;
-    grid-template-columns: 20% auto;
-    width: 100%;
-    height: 100%;
-    font-size: 35px;
-    font-style: italic;
-    color: #000;
-    font-weight: bold;
-}
-
-.logo span{
-    margin: 10px;
-}
-
-.logo ul li{
-    width: 100%;
-    height: 100%;
-    color: #000;
-    margin-left: 77%;
-    display: grid;
-    align-items: center;
-}
-
-.lend_book{
-    display: grid;
-    align-items: center;
-    margin-left: 22%;
-    height: 100%;
-    width: 100%;
-}
-
-.lend_book_form{
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    width: 40%;
-    height: 50%;
-    display: grid;
     justify-content: center;
-    grid-template-columns: 60%;
-    grid-template-rows: 6% repeat(4, 15%) 10%;
+    align-items: center;
 }
 
-.lend_book_form input[type="text"], button[type="submit"]{
-    margin-top: 3%;
-    border-radius: 5px;
-    font-size: 18px;
-    background-color: #fff;
-    color: #000;
-    
+.container{
+    background-color: rgba(250, 235, 215, 0.644);
 }
 
-.lend_book_form button[type="submit"]{
-    color: #fff;
-    background-color: #1d1d1d;
-    border-radius: 10px;
-}
-
-.organization_check{
-    font-size: 25px;
-    margin-top: 3%;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 20%);
-    grid-template-rows: repeat(2, 50%);
-}
-
-.return_book_form{
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    width: 40%;
-    height: 40%;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 60%;
-    grid-template-rows: 6% repeat(3, 18%) 15%;
-}
-
-.return_book_form input[type="text"], button[type="submit"]{
-    margin-top: 3%;
-    border-radius: 5px;
-    font-size: 18px;
-    background-color: #fff;
-    color: #000;
-
-}
-
-.return_book_form button[type="submit"]{
-    color: #fff;
-    background-color: #1d1d1d;
-    border-radius: 10px;
-}
-    
