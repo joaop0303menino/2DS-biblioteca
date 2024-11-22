@@ -6,8 +6,16 @@
     <title>login da biblioteca CG</title>
     <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
     <link rel="stylesheet" href="static/git_hub_button.css">
+    <script>
+        // Função para exibir alertas, caso estejam definidos
+        function showAlert(message) {
+            if (message) {
+                alert(message);
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="showAlert('{{ alert }}')">
     <div class="login">
         <div class="colab">
             <a href="{{ url_for('collaborators') }}">
