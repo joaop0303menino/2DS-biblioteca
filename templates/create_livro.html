@@ -9,32 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Livro</span>
-            </div>
-
-            <ul>
-                {%if session.dynamic == "adm" %}
-                    <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                    <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Tabela</p>
+            <h1>Tabela</h1>
             <form method="POST" action="/create_livro" autocomplete="off">
-                <label for="codigo">codigo:</label>
+                <label for="codigo">Codigo</label>
                 <input type="text" id="codigo" name="codigo" required>
-                <label for="nome">nome:</label>
+                <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" required>
-                <label for="quantidade">quantidade:</label>
+                <label for="quantidade">Quantidade</label>
                 <input type="text" id="quantidade" name="quantidade" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>

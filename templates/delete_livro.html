@@ -9,28 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Livro</span>
-            </div>
-
-            <ul>
-                {%if session.dynamic == "adm" %}
-                    <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                    <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Deletar um livro</p>
+            <h1>Deletar um livro</h1>
             <form method="POST" action="/delete_livro" autocomplete="off">
                 <label for="text">Qual o codigo do livro que deseja deletar:</label>
                 <input type="text" id="text" name="text" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>

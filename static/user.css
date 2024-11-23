@@ -136,6 +136,12 @@ button.btn:hover {
     transform: scale(1.1); /* Aumenta o tamanho do botão */
 }
 
+.table-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Animação de fade-in para os elementos */
 @keyframes fadeInElement {
     0% {
@@ -165,3 +171,4 @@ button.btn:hover {
         padding: 10px;
     }
 }
+

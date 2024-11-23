@@ -9,34 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Aluno</span>
-            </div>
-
-            <ul>
-                {%if session.dynamic == "adm" %}
-                    <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                    <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Tabela</p>
+            <h1>Tabela</h1>
             <form method="POST" action="/create_aluno" autocomplete="off">
-                <label for="ra">ra:</label>
-                <input type="text" id="ra" name="ra" required>
-                <label for="nome">nome:</label>
+                <label for="ra">RA</label>
+                <input type="text" id="ra" name="" required>
+                <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" required>
-                <label for="sobrenome">sobrenome:</label>
+                <label for="sobrenome">Sobrenome</label>
                 <input type="text" id="sobrenome" name="sobrenome" required>
-                <label for="serie">Serie:</label>
+                <label for="serie">Serie</label>
                 <input type="text" id="serie" name="serie" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>

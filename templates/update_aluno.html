@@ -9,24 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Aluno</span>
-            </div>
-
-            <ul>
-                {%if session.dynamic == "adm" %}
-                    <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                    <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Para atualizar digite as seguintes informações:</p>
+            <h1>Para atualizar digite as seguintes informações:</h1>
             <form method="POST" action="/update_aluno" autocomplete="off">
                 <label for="opcao">O que deseja alterar:</label>
                 <input type="text" id="opcao" name="opcao" required>
@@ -34,7 +18,7 @@
                 <input type="text" id="alteracao" name="alteracao" required>
                 <label for="ra">Qual o ra do aluno que deseja atualizar</label>
                 <input type="text" id="ra" name="ra" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>

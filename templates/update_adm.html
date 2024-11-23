@@ -8,21 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Administrador</span>
-            </div>
-
-            <ul>
-                <li><a href="admin-dashboard">Menu</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Para atualizar digite as seguintes informações:</p>
+            <h1>Para atualizar digite as seguintes informações:</h1>
             <form method="POST" action="/update_adm" autocomplete="off">
                 <label for="opcao">O que deseja alterar:</label>
                 <input type="text" id="opcao" name="opcao" required>
@@ -30,7 +19,7 @@
                 <input type="text" id="alteracao" name="alteracao" required>
                 <label for="id">Qual o ID do ADM que deseja atualizar</label>
                 <input type="text" id="id" name="id" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>

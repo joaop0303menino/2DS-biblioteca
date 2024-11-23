@@ -9,28 +9,26 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Usuário</span>
-            </div>
-
-            <ul>
-                <li><a href="admin-dashboard">Menu</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="centralizar">
         <div class="box">
-            <p>Tabela</p>
+            <h1>Tabela</h1>
+
             <form method="POST" action="/create_usuario" autocomplete="off">
-                <label for="nome">nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <label for="sobrenome">sobrenome:</label>
-                <input type="text" id="sobrenome" name="sobrenome" required>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Enviar</button>
+                <div class="box-register">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="box-register">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" id="sobrenome" name="sobrenome" required>
+                </div>
+
+                <div class="box-register">
+                    <label for="password">Senha</label>
+                    <input type="Password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
     </div>
