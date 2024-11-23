@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from hashlib import sha256
 
+
 def inserir_administrador(login,nome, senha,mysql):
     try:
         senha_criptografada = sha256(senha.encode()).hexdigest()

@@ -8,7 +8,7 @@ import dic
 app = Flask(__name__)
 
 mysql = i_sql.intergracao(app)
-   
+
 @app.route('/')
 def home():
     return render_template("login.html")
@@ -149,13 +149,22 @@ def delete_livro():
 #Funções do histórico
 @app.route("/lend_book", methods=['POST', 'GET'])
 def lend_book():   
+    response_server = ' '
     if request.method == 'POST':
-        ra = request.form.get('ra')
-        codigo = request.form.get('codigo')
-        observacao = request.form.get('observacao')
-        estado = request.form.get('estado')
-        ins.inserir_historico(ra, codigo, observacao, estado,mysql)
-    return render_template("lend_book.html")
+        try:
+            ra = request.form.get('ra')
+            codigo = request.form.get('codigo')
+            observacao = request.form.get('observacao')
+            estado = request.form.get('estado')
+            ins.inserir_historico(ra, codigo, observacao, estado, mysql)
+            response_server = 'Livro emprestado com sucesso'
+
+        except Exception as e:
+            response_server = f'Error: \n{e}'
+            print(response_server)
+
+
+    return render_template("lend_book.html", response_server=response_server)
 
 @app.route("/read_table_historico")
 def read_table_historico():  
@@ -166,12 +175,17 @@ def read_table_historico():
 
 @app.route("/return_book", methods=['POST', 'GET'])
 def return_book():   
+    response_server = ' '
     if request.method == 'POST':
-        alteracao = request.form.get('alteracao')
-        id = request.form.get('id')
-        opcao = request.form.get('observacao')
-        devs.update("historico",opcao,alteracao,'id',id,mysql) 
-    return render_template("return_book.html")
+        try:
+            alteracao = request.form.get('alteracao')
+            id = request.form.get('id')
+            opcao = request.form.get('observacao')
+            devs.update("historico", opcao, alteracao, 'id', id, mysql) 
+        except Exception as e:
+            response_server = f'Error: \n{e}'
+            print(response_server)
+    return render_template("return_book.html", response_server=response_server)
 
 #Funções do aluno
 @app.route("/create_aluno", methods=['POST', 'GET'])

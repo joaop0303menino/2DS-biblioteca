@@ -10,24 +10,9 @@
 </head>
 
 <body>
-  <div class="end">
-    <div class="container">
-      <nav>
-        <h1>Histórico</h1>
-      </nav>
-    </div>
-  </div>
-
-  <div class="centralizar">
-    <div class="box">
-      <div class="table-container">
-        {{ table|safe }}
-      </div>
-    </div>
-  </div>
-
-  <div class="side_bar">
-    <div class="menu">
+  <div class="container_main">
+    <div class="side_bar">
+      <div class="menu">
       <div class="item">
         <a class="sub_btn"><i class="bi bi-person-circle"></i>Responsável 
           <i class="bi bi-caret-down-fill dropdown"></i></a>
@@ -70,6 +55,18 @@
       <div class="item"><a href="return_book"><i class="bi bi-book"></i>Devolver livro</a></div>
     </div>
   </div>
+  <div class="align_title_table">
+    <div class="container">
+        <h1>Histórico</h1>
+    </div>
+    <div class="centralizar">
+      <div class="box">
+        <div class="table-container">
+          {{ table|safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
-
 </html>
