@@ -43,13 +43,19 @@ def user_dashboard():
         return render_template("responsavel.html",table=table)
     return redirect(url_for('home'))
 
+@app.route("/read/<entity>")
+def read_entity(entity):
+    entidades = dic.read()
+    oq_pegar = entidades[entity]["columns"]
+    tabela = entidades[entity]["table"]
+    rename_columns = entidades[entity].get("rename_columns", {})
+    try:
+        table = devs.read_table(tabela, oq_pegar, mysql=mysql, rename_columns=rename_columns)
+        return render_template("read.html",table=table)
+    except:
+        return render_template("read.html",table=table, erro="erro")
+    
 #Funções adm
-@app.route("/read_table_adm")
-def read_table_adm():
-    rename = dic.adm()
-    tabela = 'administrador'
-    table = devs.read_table(tabela, oq_pegar="login, nome", mysql=mysql, rename_columns=rename)
-    return render_template("read_table_adm.html",table=table)
 
 @app.route("/create_adm", methods=['POST', 'GET'])
 def create_adm():
@@ -86,12 +92,6 @@ def create_usuario():
         ins.inserir_usuario(id, nome ,sobrenome, senha,mysql)
     return render_template("create_usuario.html")
 
-@app.route("/read_table_usuario")
-def read_table_usuario(): 
-    rename = dic.user()
-    tabela = 'usuario'
-    table = devs.read_table(tabela, oq_pegar="id, nome, sobrenome", mysql=mysql, rename_columns=rename) 
-    return render_template("read_table_usuario.html", table=table)
 
 @app.route("/update_usuario", methods=['POST', 'GET'])
 def update_usuario():   
@@ -120,13 +120,6 @@ def create_livro():
         quantidade = request.form.get('quantidade')
         ins.inserir_livros(codigo,nome,quantidade,mysql)
     return render_template("create_livro.html")
-
-@app.route("/read_table_livro")
-def read_table_livro(): 
-    rename = dic.livro() 
-    tabela = 'livro'
-    table = devs.read_table(tabela, oq_pegar="*", mysql=mysql, rename_columns=rename) 
-    return render_template("read_table_livro.html", table=table)
 
 @app.route("/update_livro", methods=['POST', 'GET'])
 def update_livro():  
@@ -166,12 +159,6 @@ def lend_book():
 
     return render_template("lend_book.html", response_server=response_server)
 
-@app.route("/read_table_historico")
-def read_table_historico():  
-    rename = dic.historico()
-    tabela = 'historico'
-    table = devs.read_table(tabela, oq_pegar="*", mysql=mysql, rename_columns=rename)
-    return render_template("read_table_historico.html", table=table)
 
 @app.route("/return_book", methods=['POST', 'GET'])
 def return_book():   
@@ -198,12 +185,6 @@ def create_aluno():
         ins.inserir_aluno(ra, nome,sobrenome, serie,mysql)
     return render_template("create_aluno.html")
 
-@app.route("/read_table_aluno")
-def read_table_aluno():   
-    rename = dic.aluno()
-    tabela = 'aluno'
-    table = devs.read_table(tabela, oq_pegar="*",mysql=mysql, rename_columns=rename)
-    return render_template("read_table_aluno.html", table=table)
 
 @app.route("/update_aluno", methods=['POST', 'GET'])
 def update_aluno():   

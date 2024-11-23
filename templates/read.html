@@ -8,24 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <span>Histórico</span>
-            </div>
-
-            <ul>
-                {%if session.dynamic == "adm" %}
-                    <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                    <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-            </ul>
-        </nav>
-    </div>
-    <div class="centralizar">
+    <div class="cont">
         <div class="box">
-            <p>Tabela</p>
+            <h1>Tabela</h1>
             <div class="table-container">
                 {{ table|safe }}
             </div>

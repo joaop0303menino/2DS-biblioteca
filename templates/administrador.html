@@ -18,7 +18,7 @@
           <i class="bi bi-caret-down-fill dropdown"></i></a>
         <div class="sub_menu">
           <a href="create_usuario" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-          <a href="read_table_usuario" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
+          <a href="{{ url_for('read_entity', entity='usuario') }}" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
           <a href="update_usuario" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
           <a href="delete_usuario" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
         </div>
@@ -28,7 +28,7 @@
             class="bi bi-caret-down-fill dropdown"></i></a>
         <div class="sub_menu">
           <a href="create_adm" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-          <a href="read_table_adm" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
+          <a href="{{ url_for('read_entity', entity='administrador') }}" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
           <a href="update_adm" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
           <a href="delete_adm" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
         </div>
@@ -37,7 +37,7 @@
         <a class="sub_btn"><i class="bi bi-person-circle"></i>Aluno <i class="bi bi-caret-down-fill dropdown"></i></a>
         <div class="sub_menu">
           <a href="create_aluno" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-          <a href="read_table_aluno" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
+          <a href="{{ url_for('read_entity', entity='aluno') }}" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
           <a href="update_aluno" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
           <a href="delete_aluno" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
         </div>
@@ -46,7 +46,7 @@
         <a class="sub_btn"><i class="bi bi-book"></i>Livro <i class="bi bi-caret-down-fill dropdown"></i></a>
         <div class="sub_menu">
           <a href="create_livro" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-          <a href="read_table_livro" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
+          <a href="{{ url_for('read_entity', entity='livro') }}" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
           <a href="update_livro" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
           <a href="delete_livro" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
         </div>
