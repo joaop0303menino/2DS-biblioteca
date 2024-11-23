@@ -38,6 +38,29 @@ body {
     animation: slideIn 0.5s ease-out;
 }
 
+/* Container da tabela de aluno */
+.cont {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Container de devolver livro */
+.ctn{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
+    animation: slideIn 0.5s ease-out;
+}
+
+
 @keyframes slideIn {
     0% {
         transform: translateY(100px);
@@ -109,9 +132,9 @@ input::placeholder {
 
 /* Animação ao passar o mouse sobre o campo de entrada */
 input:hover {
-    border-color: #000000; /* Altera a cor da borda para azul */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra azul */
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do input */
+    border-color: #000000; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.05); 
 }
 
 /* Animação ao passar o mouse sobre o botão */
@@ -132,8 +155,8 @@ button.btn {
 }
 
 button.btn:hover {
-    background-color: #020202c2; /* Cor de fundo do botão ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    background-color: #020202c2; 
+    transform: scale(1.1); 
 }
 
 .table-container{
@@ -141,6 +164,8 @@ button.btn:hover {
     align-items: center;
     justify-content: center;
 }
+
+
 
 /* Animação de fade-in para os elementos */
 @keyframes fadeInElement {
