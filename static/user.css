@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
-    /* Config BackGround */
+body {
+    /* Configurações do plano de fundo */
     background-image: url(imagem/biblioteca-CG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,9 +15,153 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 1.5s ease-out;
 }
 
-.container{
-    background-color: rgba(250, 235, 215, 0.644);
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+.container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+    animation: fadeInText 1s ease-out;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.box-register {
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInElement 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInElement 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInElement 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+input:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+input::placeholder {
+    color: #000000af;
+    font-style: italic;
+}
+
+/* Animação ao passar o mouse sobre o campo de entrada */
+input:hover {
+    border-color: #000000; /* Altera a cor da borda para azul */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra azul */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do input */
+}
+
+/* Animação ao passar o mouse sobre o botão */
+button.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #242a30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInElement 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+button.btn:hover {
+    background-color: #020202c2; /* Cor de fundo do botão ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+}
+
+/* Animação de fade-in para os elementos */
+@keyframes fadeInElement {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 15px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input, button {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
