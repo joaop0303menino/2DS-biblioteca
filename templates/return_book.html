@@ -56,22 +56,11 @@
 
 
 <div class="ctn">
-        <div class="logo">
-            <span>Devolver livro</span>
-            
-            <ul>
-                {%if session.dynamic == "adm" %}
-                <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-                <li></li>
-            </ul>
-        </div>
+      
 <div>
     <div class="lend_book">
         <form method="POST" action="/return_book" class="return_book_form" autocomplete="off">
-        <h2>Adicione os seguintes itens abaixo:</h2>
+        <h1>Adicione os seguintes itens abaixo:</h1>
         <input type="text" id="alteracao" name="alteracao" placeholder="Nome do livro">
         <input type="text" id="id" name="id" placeholder="Id do histórico onde está o livro pendente">
         <input type="text" id="obs" name="observacao" placeholder="observacão do livro">

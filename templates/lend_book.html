@@ -53,24 +53,12 @@
         <div class="item"><a href="return_book"><i class="bi bi-book"></i>Devolver livro</a></div>
     </div>
 </div>
-<div class="container">
-        <div class="logo">
-            <span>Emprestar livro</span>
-            
-            <ul>
-                {%if session.dynamic == "adm" %}
-                <li><a href="admin-dashboard">Menu</a></li>
-                {%elif session.dynamic == "user" %}
-                <li><a href="user-dashboard">Menu</a></li>
-                {%endif %}
-                <li></li>
+<div class="ctn">
 
-            </ul>
-        </div>
 <div>
     <div class="lend_book">
         <form method="POST" action="/lend_book" class="lend_book_form" autocomplete="off">
-            <h2>Adicione os seguintes itens abaixo:</h2>
+            <h1>Adicione os seguintes itens abaixo:</h1>
             <input type="text" id="ra" name="ra" placeholder="ra">
             <input type="text" id="codigo" name="codigo" placeholder="codigo">
             <input type="text" id="observacao" name="observacao" placeholder="observacao">
@@ -80,7 +68,7 @@
                 <label>pendente</label>
                 <input type="radio" id="estado" name="estado" value="pendente" >
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn">Enviar</button>
             <p>{{response_server}}</p>
         </form>
     </div>
