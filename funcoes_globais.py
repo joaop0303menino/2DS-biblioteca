@@ -1,13 +1,6 @@
 import pandas as pd
 from hashlib import sha256
 
-def read_table(tabela, oq_pegar, mysql, rename_columns):
-    
-    cursor = mysql.connection.cursor()
-    query = f'SELECT {oq_pegar} FROM {tabela}'
-    cursor.execute(query)
-    results = cursor.fetchall()
-    columns = [desc[0] for desc in cursor.description]
 def read_table(tabela, oq_pegar, mysql,rename_columns):
     try: 
         cursor = mysql.connection.cursor()

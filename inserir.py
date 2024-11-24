@@ -5,7 +5,7 @@ from hashlib import sha256
 def inserir_administrador(login,nome, senha,mysql):
     try:
         senha_criptografada = sha256(senha.encode()).hexdigest()
-        query = "INSERT INTO administrador(login,nome senha) VALUES (%s,%s, %s)"
+        query = "INSERT INTO administrador(login,nome, senha) VALUES (%s,%s, %s)"
         cur = mysql.connection.cursor()
         cur.execute(query, (login, nome, senha_criptografada))
         mysql.connection.commit()
