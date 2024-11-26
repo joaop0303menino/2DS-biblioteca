@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -78,7 +78,7 @@ h1 {
     font-size: 24px;
     color: #000000;
     margin-bottom: 20px;
-    animation: fadeInText 1s ease-out;
+    animation: fadeInText 0.5s ease-out;
 }
 
 @keyframes fadeInText {
@@ -93,7 +93,7 @@ h1 {
 .box-register {
     margin-bottom: 15px;
     opacity: 0;
-    animation: fadeInElement 1s ease-out forwards;
+    animation: fadeInElement 0.5s ease-out forwards;
     animation-delay: 0.5s;
 }
 
@@ -104,8 +104,8 @@ label {
     margin-bottom: 5px;
     text-align: center;
     opacity: 0;
-    animation: fadeInElement 1s ease-out forwards;
-    animation-delay: 1s;
+    animation: fadeInElement 0.5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 input {
@@ -118,7 +118,7 @@ input {
     transition: all 0.3s ease;
     opacity: 0;
     animation: fadeInElement 1s ease-out forwards;
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
 }
 input:focus {
     outline: none;
@@ -135,7 +135,7 @@ input::placeholder {
 input:hover {
     border-color: #000000; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-    transform: scale(1.05); 
+    transform: scale(1.00); 
 }
 
 /* Animação ao passar o mouse sobre o botão */
@@ -151,8 +151,8 @@ button.btn {
     transition: background-color 0.3s, transform 0.3s;
     margin-top: 10px;
     opacity: 0;
-    animation: fadeInElement 1s ease-out forwards;
-    animation-delay: 2s;
+    animation: fadeInElement 0.5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 button.btn:hover {
