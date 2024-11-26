@@ -19,19 +19,19 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-<<<<<<< HEAD
+
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.5s ease-out;
-=======
+
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 5% auto;
     animation: fadeIn 1.5s ease-out;
->>>>>>> 9cf7b1bd0d1a6e84a9158aa49bfebc2e2ca35463
+
 }
 
 .btn-menu{
@@ -98,7 +98,7 @@ body {
     border-radius: 10px;
     width: 60%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
-    animation: slideIn 0.5s ease-out;
+    animation: slideIn 0.1s ease-out;
     text-align: center;
 }
 
