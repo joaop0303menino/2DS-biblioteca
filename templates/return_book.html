@@ -9,64 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="side_bar">
-        <div class="menu">
-            <div class="item">
-                <a class="sub_btn"><i class="bi bi-person-circle"></i>Responsável 
-                    <i class="bi bi-caret-down-fill dropdown"></i></a>
-                    <div class="sub_menu">
-                        <a href="create_usuario" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-                        <a href="read_table_usuario" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
-                        <a href="update_usuario" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
-                        <a href="delete_usuario" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <a class="sub_item"><i class="bi bi-person-circle"></i> Administrador <i
-                        class="bi bi-caret-down-fill dropdown"></i></a>
-            <div class="sub_menu">
-                <a href="create_adm" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-                <a href="read_table_adm" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
-                <a href="update_adm" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
-                <a href="delete_adm" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
-            </div>
-        </div>
-        <div class="item">
-            <a class="sub_btn"><i class="bi bi-person-circle"></i>Aluno <i class="bi bi-caret-down-fill dropdown"></i></a>
-            <div class="sub_menu">
-                <a href="create_aluno" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-                <a href="read_table_aluno" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
-                <a href="update_aluno" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
-                <a href="delete_aluno" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
-            </div>
-        </div>
-        <div class="item">
-            <a class="sub_btn"><i class="bi bi-book"></i>Livro <i class="bi bi-caret-down-fill dropdown"></i></a>
-            <div class="sub_menu">
-                <a href="create_livro" class="sub_item"><i class="bi bi-plus-lg"></i>adicionar</a>
-                <a href="read_table_livro" class="sub_item"><i class="bi bi-table"></i>Tabela</a>
-                <a href="update_livro" class="sub_item"><i class="bi bi-pencil-square"></i>Alterar</a>
-                <a href="delete_livro" class="sub_item"><i class="bi bi-trash"></i>Deletar</a>
-            </div>
-        </div>
-        <div class="item"><a href="lend_book"><i class="bi bi-book"></i>Emprestar livro</a></div>
-        <div class="item"><a href="return_book"><i class="bi bi-book"></i>Devolver livro</a></div>
-    </div>
-</div>
-
-
-<div class="ctn">
-      
-<div>
+    <div class="ctn">
     <div class="lend_book">
         <form method="POST" action="/return_book" class="return_book_form" autocomplete="off">
         <h1>Adicione os seguintes itens abaixo:</h1>
-        <input type="text" id="alteracao" name="alteracao" placeholder="Nome do livro">
-        <input type="text" id="id" name="id" placeholder="Id do histórico onde está o livro pendente">
-        <input type="text" id="obs" name="observacao" placeholder="observacão do livro">
+        <input type="text" id="lend_return" name="alteracao" placeholder="Nome do livro">
+        <input type="text" id="lend_return" name="id" placeholder="Id do histórico onde está o livro pendente">
+        <input type="text" id="lend_return" name="observacao" placeholder="observacão do livro">
         <button type="submit" class="btn">Devolver</button>
     </form>
-</div>
 </div>
 </div>
 </body>

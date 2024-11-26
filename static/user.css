@@ -56,9 +56,10 @@ body {
     backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 10px;
-    width: 3000px;
+    width: 60%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
     animation: slideIn 0.5s ease-out;
+    text-align: center;
 }
 
 
@@ -108,7 +109,7 @@ label {
     animation-delay: 1s;
 }
 
-input {
+input, #lend_return {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -120,6 +121,16 @@ input {
     animation: fadeInElement 1s ease-out forwards;
     animation-delay: 1.5s;
 }
+
+#estado {
+    width: 8%;
+}
+
+.estado {
+    font-size: 18px;
+    font-style: italic;
+}
+
 input:focus {
     outline: none;
     border-color: #000000;
@@ -129,6 +140,12 @@ input:focus {
 input::placeholder {
     color: #000000af;
     font-style: italic;
+}
+
+#lend_return:hover, #estado:hover {
+    border-color: #000000; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.01); 
 }
 
 /* Animação ao passar o mouse sobre o campo de entrada */
