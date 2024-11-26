@@ -28,18 +28,22 @@ def collaborators():
 @app.route('/admin-dashboard')
 def admin_dashboard():
     if 'dynamic' in session and session['dynamic'] == 'adm':
-        rename = dic.historico()
-        tabela = 'historico'
-        table = devs.read_table(tabela, oq_pegar="RA_aluno, codigo_livro, dataRetirada, prazoDevolucao, data_da_devolucao, observacao, estado",mysql=mysql, rename_columns=rename)
+        entidades = dic.read()
+        oq_pegar = entidades["historico"]["columns"]
+        tabela = entidades["historico"]["table"]
+        rename_columns = entidades["historico"].get("rename_columns", {})
+        table = devs.read_table(tabela, oq_pegar,mysql=mysql, rename_columns=rename_columns)
         return render_template("administrador.html", table=table)
     return redirect(url_for('home'))
 
 @app.route('/user-dashboard')
 def user_dashboard():
     if 'dynamic' in session and session['dynamic'] == 'user':
-        rename = dic.historico()
-        tabela = 'historico'
-        table = devs.read_table(tabela, oq_pegar="RA_aluno, codigo_livro, dataRetirada, prazoDevolucao, data_da_devolucao, observacao, estado",mysql=mysql, rename_columns=rename)
+        entidades = dic.read()
+        oq_pegar = entidades["historico"]["columns"]
+        tabela = entidades["historico"]["table"]
+        rename_columns = entidades["historico"].get("rename_columns", {})
+        table = devs.read_table(tabela, oq_pegar,mysql=mysql, rename_columns=rename_columns)
         return render_template("responsavel.html",table=table)
     return redirect(url_for('home'))
 

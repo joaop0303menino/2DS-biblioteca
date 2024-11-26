@@ -9,29 +9,36 @@
 </head>
 <body>
   <div class="btn-menu">
-    <a href="#"><i class="bi bi-list"></i></a>
+          <ul>
+              {%if session.dynamic == "adm" %}
+                  <li><a href="admin-dashboard">Menu</a></li>
+              {%elif session.dynamic == "user" %}
+                  <li><a href="user-dashboard">Menu</a></li>
+              {%endif %}
+              <li></li>
+          </ul>
   </div>
 
-
+  
   <div class="container">
     <!-- titulo -->
     <div class="box">
       <h1>CADASTRAR ADM</h1>
-      <form>
+      <form method="POST" action="/create_adm" autocomplete="off">
         <!-- nome do usuario -->
         <div class="box-register">
           <label for="name">Nome</label>
-          <input type="text" placeholder="digite seu nome...">
+          <input type="text" name="text" placeholder="digite seu nome...">
         </div>
         <!-- username -->
         <div class="box-register">
-          <label for="user">Usuário</label>
-          <input type="text" placeholder="digite seu username...">
+          <label for="user">Administrador</label>
+          <input type="text" name="name" placeholder="digite seu nome de administrador...">
         </div>
         <!-- digitar senha -->
         <div class="box-register">
           <label for="password">Senha</label>
-          <input type="password"placeholder="digite sua senha...">
+          <input type="password" name="password" placeholder="digite sua senha...">
         </div>
         <!-- confimar senha -->
         <div class="box-register">
@@ -39,7 +46,7 @@
           <input type="password" placeholder="confirme sua senha...">
         </div>
         <!-- Botão para criar conta -->
-          <button type="submit" class="btn" >Criar</button>
+        <button type="submit" class="btn" >Criar</button>
       </form>
     </div>
   </div>
