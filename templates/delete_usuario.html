@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <div class="btn-menu">
+        <ul>
+            {%if session.dynamic == "adm" %}
+                <li><a href="admin-dashboard">Menu</a></li>
+            {%elif session.dynamic == "user" %}
+                <li><a href="user-dashboard">Menu</a></li>
+            {%endif %}
+            <li></li>
+        </ul>
+</div>
     <div class="container">
         <div class="box">
             <h1>Deletar um usuário</h1>

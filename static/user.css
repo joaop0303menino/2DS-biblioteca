@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    overflow: hidden;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
 }
 
 body {
@@ -11,11 +19,29 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% auto;
     animation: fadeIn 1.5s ease-out;
+}
+
+.btn-menu{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    align-self: start;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-menu a{
+    color: #fff;
+    margin-right: 10px;
 }
 
 @keyframes fadeIn {
@@ -28,6 +54,8 @@ body {
 }
 
 .container {
+    align-self: center; 
+    justify-self: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
     padding: 40px 30px;
@@ -40,6 +68,8 @@ body {
 
 /* Container da tabela de aluno */
 .cont {
+    align-self: center; 
+    justify-self: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
     padding: 40px 30px;
@@ -52,6 +82,8 @@ body {
 
 /* Container de devolver livro */
 .ctn{
+    align-self: center; 
+    justify-self: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
     padding: 40px 30px;

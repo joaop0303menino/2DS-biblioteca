@@ -9,7 +9,14 @@
 </head>
 <body>
   <div class="btn-menu">
-    <a href="#"><i class="bi bi-list"></i></a>
+          <ul>
+              {%if session.dynamic == "adm" %}
+                  <li><a href="admin-dashboard">Menu</a></li>
+              {%elif session.dynamic == "user" %}
+                  <li><a href="user-dashboard">Menu</a></li>
+              {%endif %}
+              <li></li>
+          </ul>
   </div>
 
   
@@ -25,8 +32,8 @@
         </div>
         <!-- username -->
         <div class="box-register">
-          <label for="user">Usuário</label>
-          <input type="text" name="name" placeholder="digite seu username...">
+          <label for="user">Administrador</label>
+          <input type="text" name="name" placeholder="digite seu nome de administrador...">
         </div>
         <!-- digitar senha -->
         <div class="box-register">
