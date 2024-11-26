@@ -49,15 +49,20 @@ def user_dashboard():
 
 @app.route("/read/<entity>")
 def read_entity(entity):
+    if entity == 'admin-dashboard':
+        return redirect(url_for('admin_dashboard'))
+    elif entity == 'user-dashboard':
+        return redirect(url_for('user_dashboard'))
     entidades = dic.read()
     oq_pegar = entidades[entity]["columns"]
+
     tabela = entidades[entity]["table"]
     rename_columns = entidades[entity].get("rename_columns", {})
     try:
         table = devs.read_table(tabela, oq_pegar, mysql=mysql, rename_columns=rename_columns)
         return render_template("read.html",table=table)
     except:
-        return render_template("read.html",table=table, erro="erro")
+        return render_template("read.html",table=table, error="erro")
     
 #Funções adm
 
