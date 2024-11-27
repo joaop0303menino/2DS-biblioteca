@@ -95,7 +95,7 @@ body {
     border-radius: 10px;
     width: 40%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
-    animation: slideIn 0.5s ease-out;
+    animation: slideIn 0.1s ease-out;
     text-align: center;
 }
 

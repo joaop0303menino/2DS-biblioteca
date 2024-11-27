@@ -60,23 +60,25 @@ body {
 .table-container::-webkit-scrollbar {
     width: 7px;
     height: 8px;
-    background-color: #000;
+    background-color: #c0f1fa;
   }
 
 table {
     border-collapse: collapse;
-    color: #ffffff;
-    width: 100%;  /* Garante que a tabela use toda a largura da div */
+    color: #000000;
+    width: 100%; 
 }
 
 th, td {
     padding: 8px 12px;
     text-align: left;
-    border: 2px solid #ffffff;
-    background-color: #38bdf8;
+    border: 2px solid #000000;
+    background-color: #ffffffa4;
+    backdrop-filter: blur(10px);
 }
 
 th {
+    border: 2px solid #000000;
     background-color: #0484bb;
 }
 
@@ -103,7 +105,7 @@ th {
 }
 
 .side_bar .menu .item a:hover{
-    background-color: blue;
+    background-color: rgba(102, 207, 200, 0.938);
     transition: 0.3s;
 }
 
@@ -122,12 +124,10 @@ th {
     display: block;
 }
 
-.side_bar .menu .item .sub_menu a{
-    padding-left: 30px;
-    display: none;
-    transition: 1s;
+.side_bar .menu .item .sub_menu {
+    display: none; 
 }
 
-.side_bar .menu .item:hover .sub_menu a{
-    display: block;
+.side_bar .menu .item .sub_menu.active {
+    display: block; 
 }
