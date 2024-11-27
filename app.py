@@ -4,6 +4,7 @@ import autenticacao as au
 import funcoes_globais as devs
 import inserir as ins
 import dic
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -174,10 +175,19 @@ def return_book():
     response_server = ' '
     if request.method == 'POST':
         try:
-            alteracao = request.form.get('alteracao')
-            id = request.form.get('id')
-            opcao = request.form.get('observacao')
-            devs.update("historico", opcao, alteracao, 'id', id, mysql) 
+            date_now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            ra_student = request.form.get('ra_student')
+            observacao = request.form.get('observacao')
+            name_book = request.form.get('name_book')
+            estado = 'entregue'
+
+            if date_now != None and ra_student != None:
+                devs.update("historico", 'data_da_devolucao', date_now, 'RA_aluno', ra_student, mysql)
+                if observacao != None:
+                    devs.update("historico", 'observacao', observacao, 'RA_aluno', ra_student, mysql)
+                    if estado != None:
+                        devs.update("historico", 'estado', estado, 'RA_aluno', ra_student, mysql)
+
         except Exception as e:
             response_server = f'Error: \n{e}'
             print(response_server)
