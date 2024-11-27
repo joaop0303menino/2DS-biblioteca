@@ -221,6 +221,31 @@ button.btn:hover {
 }
 
 
+.table-container::-webkit-scrollbar {
+    width: 7px;
+    height: 8px;
+    background-color: #c0f1fa;
+  }
+
+table {
+    border-collapse: collapse;
+    color: #000000;
+    width: 100%; 
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 2px solid #000000;
+    background-color: #ffffffa4;
+    backdrop-filter: blur(10px);
+}
+
+th {
+    border: 2px solid #000000;
+    background-color: #0484bb;
+}
+
 
 /* Animação de fade-in para os elementos */
 @keyframes fadeInElement {
