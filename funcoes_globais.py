@@ -1,5 +1,6 @@
 import pandas as pd
 from hashlib import sha256
+from datetime import datetime
 
 def read_table(tabela, oq_pegar, mysql,rename_columns):
     try: 
@@ -31,6 +32,18 @@ def update(tabela,opcao_correspondente_a_mudanca,mudanca,pk_tabela_correspondent
         cur.close()
     except:
         return f"<h1>ERROR</h1>"
+    
+def update_historico(mudanca, identificacao_RA,identificacao_codigo, mysql): 
+    try: 
+        cur = mysql.connection.cursor()
+        data_entrega = datetime.today()  
+        query = f"UPDATE historico SET data_da_devolucao = %s, observacao = %s, estado = 'entregue' WHERE RA_aluno = %s AND codigo_livro = %s AND estado = 'pendente'"
+        cur.execute(query, (data_entrega,mudanca, identificacao_RA, identificacao_codigo))
+        mysql.connection.commit()
+        cur.close()
+    except:
+        return f"<h1>ERROR</h1>"
+    
     
 def delete(tabela,coluna,valor, mysql):
     try:

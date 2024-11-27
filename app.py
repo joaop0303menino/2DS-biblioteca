@@ -4,7 +4,7 @@ import autenticacao as au
 import funcoes_globais as devs
 import inserir as ins
 import dic
-from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -158,8 +158,7 @@ def lend_book():
             ra = request.form.get('ra')
             codigo = request.form.get('codigo')
             observacao = request.form.get('observacao')
-            estado = request.form.get('estado')
-            ins.inserir_historico(ra, codigo, observacao, estado, mysql)
+            ins.inserir_historico(ra, codigo, observacao, mysql)
             response_server = 'Livro emprestado com sucesso'
 
         except Exception as e:
@@ -175,18 +174,10 @@ def return_book():
     response_server = ' '
     if request.method == 'POST':
         try:
-            date_now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             ra_student = request.form.get('ra_student')
             observacao = request.form.get('observacao')
             name_book = request.form.get('name_book')
-            estado = 'entregue'
-
-            if date_now != None and ra_student != None:
-                devs.update("historico", 'data_da_devolucao', date_now, 'RA_aluno', ra_student, mysql)
-                if observacao != None:
-                    devs.update("historico", 'observacao', observacao, 'RA_aluno', ra_student, mysql)
-                    if estado != None:
-                        devs.update("historico", 'estado', estado, 'RA_aluno', ra_student, mysql)
+            devs.update_historico(observacao,ra_student,name_book,mysql=mysql)
 
         except Exception as e:
             response_server = f'Error: \n{e}'

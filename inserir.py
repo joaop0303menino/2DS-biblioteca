@@ -44,11 +44,12 @@ def inserir_livros(codigo, nome, quantidade,mysql):
     except:
         return f"<h1>ERROR</h1>"
 
-def inserir_historico(ra, codigo_livro, obs, estado,mysql):
+def inserir_historico(ra, codigo_livro, obs,mysql):
     try: 
         data_retirada = datetime.today()
         data_devolucao = data_retirada + timedelta(days=30)
         prazo = ""
+        estado = "pendente"
 
         query = "INSERT INTO historico(RA_aluno, codigo_livro, dataRetirada, prazoDevolucao, data_da_devolucao, observacao, estado) VALUES (%s,%s, %s, %s, %s, %s, %s)"
         cur = mysql.connection.cursor()
